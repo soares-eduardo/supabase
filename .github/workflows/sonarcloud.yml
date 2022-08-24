@@ -43,6 +43,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Install dependencies
+        run: yarn
+      - name: Test and coverage
+        run: yarn jest --coverage
       - name: Analyze with SonarCloud         
 
         # You can pin the exact commit or the version.
