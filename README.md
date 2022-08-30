@@ -229,8 +229,8 @@ Our approach for client libraries is modular. Each sub-library is a standalone i
 
 [![New Sponsor](https://user-images.githubusercontent.com/10214025/90518111-e74bbb00-e198-11ea-8f88-c9e3c1aa4b5b.png)](https://github.com/sponsors/supabase)
 
-## Tecnologias
+## Technologies
 
 ![js.logo](https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-0.png)
 ![postgrest.logo](https://postgrest.org/en/stable/_images/logo.png)
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![ts.logo](https://cdn-icons-png.flaticon.com/512/919/919832.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![ts.logo](https://cdn-icons-png.flaticon.com/512/919/919832.png)
