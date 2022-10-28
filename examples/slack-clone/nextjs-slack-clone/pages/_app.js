@@ -41,7 +41,6 @@ export default function SupabaseSlackClone({ Component, pageProps }) {
   }
 
   const signOut = async () => {
-    const result = await supabase.auth.signOut()
     Router.push('/')
   }
 
