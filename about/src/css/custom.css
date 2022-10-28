@@ -623,15 +623,14 @@ div[class^='docSidebarContainer_'] {
 div[class^='sidebar_'] {
   font-size: 0.85rem;
 }
+
 div[class^='sidebar_'] .menu {
+  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   padding-bottom: var(--ifm-spacing-vertical);
 }
 
-div[class^='sidebar_'] .menu {
-  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
-}
 div[class^='sidebar_'] .menu .menu__link {
   padding-right: var(--ifm-menu-link-padding-horizontal);
   color: var(--custom-color-content);
