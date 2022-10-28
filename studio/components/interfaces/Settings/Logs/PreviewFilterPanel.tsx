@@ -27,7 +27,7 @@ interface Props {
   onExploreClick?: () => void
   onSelectTemplate: (template: LogTemplate) => void
   table: LogsTableName
-  condensedLayout: Boolean
+  condensedLayout: boolean
   isShowingEventChart: boolean
   onToggleEventChart: () => void
   csvData?: unknown[]
