@@ -1,6 +1,5 @@
 import semver from 'semver'
 import { FC } from 'react'
-import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
 import { useRouter } from 'next/router'
 import { Typography } from '@supabase/ui'
@@ -24,9 +23,6 @@ const Templates: FC<any> = ({ project }) => {
         semver.coerce('kps-v2.5.3')
       )
     : true
-
-  const canUpdateTemplates = checkPermissions(PermissionAction.UPDATE, 'custom_config_gotrue')
-
   const { config, error, mutateAuthConfig } = useProjectAuthConfig(project.ref)
   if (error) {
     return (

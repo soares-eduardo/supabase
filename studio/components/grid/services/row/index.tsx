@@ -18,7 +18,6 @@ export interface IRowService {
   fetchAllData: (filters: Filter[], sorts: Sort[]) => Promise<any[]>
 
   /**
-   * TODO: should return a promise.
    * We should show loading indicator when deleting rows (on row level).
    * Only remove rows from the grid when delete returns success result.
    * ---

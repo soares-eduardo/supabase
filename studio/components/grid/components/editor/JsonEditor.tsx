@@ -88,6 +88,7 @@ export const minifyJSON = (value: string) => {
   try {
     return JSON.stringify(JSON.parse(value))
   } catch (err) {
+    console.log(err)
     throw err
   }
 }

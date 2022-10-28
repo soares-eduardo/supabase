@@ -11,7 +11,7 @@ export async function fetchCount(
 
   const { data, error } = await state.rowService.count(filters)
   if (error) {
-    // TODO: handle fetch rows count error
+    console.log(error)
   } else {
     dispatch({
       type: 'SET_ROWS_COUNT',
@@ -36,7 +36,7 @@ export async function fetchPage(
     sorts
   )
   if (error) {
-    // TODO: handle fetch rows data error
+    console.log(error)
   } else {
     dispatch({
       type: 'SET_ROWS',

@@ -2,10 +2,9 @@ import * as React from 'react'
 import { IconKey, IconLink } from '@supabase/ui'
 import { useDrag, useDrop, DropTargetMonitor } from 'react-dnd'
 import { XYCoord } from 'dnd-core'
-import { useDispatch } from '../../store'
+import { useDispatch, useTrackedState } from '../../store'
 import { ColumnHeaderProps, ColumnType, DragItem } from '../../types'
 import { ColumnMenu } from '../menu'
-import { useTrackedState } from '../../store'
 
 export function ColumnHeader<R>({
   column,
@@ -132,15 +131,14 @@ export function ColumnHeader<R>({
 }
 
 function renderColumnIcon(type: ColumnType) {
-  switch (type) {
-    case 'foreign_key':
-      return (
-        <div>
-          <IconLink size="tiny" strokeWidth={2} />
-        </div>
-      )
-    default:
-      return null
+  if(type == 'foreign_key') {
+    return (
+      <div>
+        <IconLink size="tiny" strokeWidth={2} />
+      </div>
+    )
+  } else {
+    return null
   }
 }
 

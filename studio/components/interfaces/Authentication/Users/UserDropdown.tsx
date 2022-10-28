@@ -1,6 +1,6 @@
 import { FC, useContext, useState } from 'react'
 import { observer } from 'mobx-react-lite'
-import { Button, Dropdown, Divider, IconTrash, IconMail, IconMoreHorizontal } from '@supabase/ui'
+import { Button, Dropdown, IconTrash, IconMail, IconMoreHorizontal } from '@supabase/ui'
 
 import { useStore } from 'hooks'
 import { timeout } from 'lib/helpers'

@@ -79,7 +79,6 @@ const BaseReducer = (state: BaseInitialState, action: BASE_ACTIONTYPE) => {
     // [Joshen] Just FYI I'm doing refresh immediately as I don't see
     // why we need to debounce fetching of the page data (ref SupabaseGrid.tsx)
     // Leaving it as a comment here in case i'm overlooking something
-    // If all is good, [TODO] Deprecate refreshPageDebounced
     case 'UPDATE_FILTERS': {
       const newState: any = { ...state }
       newState.page = 1

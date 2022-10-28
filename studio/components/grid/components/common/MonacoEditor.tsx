@@ -2,9 +2,9 @@ import * as React from 'react'
 import Editor from '@monaco-editor/react'
 
 type MonacoEditorProps = {
-  width?: string | number | undefined
-  height?: string | number | undefined
-  value?: string | undefined
+  width: string | number | undefined
+  height: string | number | undefined
+  value: string | undefined
   language?: string | undefined
   onChange: (value: string | undefined) => void
   onMount?: (editor: any) => void

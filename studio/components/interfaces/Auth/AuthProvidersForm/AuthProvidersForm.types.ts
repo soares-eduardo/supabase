@@ -23,7 +23,7 @@ export interface Provider {
       isSecret?: boolean
     }
   }
-  validationSchema: any // todo: use Yup type
+  validationSchema: any
   misc: {
     iconKey: 'gitlab-icon'
     requiresRedirect: true
