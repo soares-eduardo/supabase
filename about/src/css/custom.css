@@ -801,6 +801,8 @@ a.hash-link {
 
 .DocSearch-Button {
   border-radius: 8px !important;
+  background: var(--custom-background-color-diff) !important;
+  font-family: var(--ifm-font-family-base);
 }
 .DocSearch-Button > svg {
   display: none;
@@ -876,11 +878,6 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-modal-background: var(--custom-background-color-diff);
 }
 
-.DocSearch-Button {
-  border-radius: 6px !important;
-  background: var(--custom-background-color-diff) !important;
-  font-family: var(--ifm-font-family-base);
-}
 .DocSearch-Button-Placeholder {
   font-family: var(--ifm-font-family-base);
   line-height: 10px;
