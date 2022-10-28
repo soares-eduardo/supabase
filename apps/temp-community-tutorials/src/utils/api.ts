@@ -3,7 +3,7 @@ const postsUrl = `https://dev.to/api/articles?username=${username}`
 
 // Defines a Post returned from the DEV API
 export type DevPost = {
-  id: Number
+  id: number
   title: string
   description: string
   slug: string
@@ -13,9 +13,9 @@ export type DevPost = {
   published_at: string
   tags: string
   tag_list: string[]
-  comments_count: Number
-  public_reactions_count: Number
-  positive_reactions_count: Number
+  comments_count: number
+  public_reactions_count: number
+  positive_reactions_count: number
   published: boolean
   first_published_at: string
   edited_at: string
@@ -35,7 +35,7 @@ export type DevPost = {
     path: string
   }
   organization: {
-    id: Number
+    id: number
     name: string
     slug: string
     profile_image_90: string
