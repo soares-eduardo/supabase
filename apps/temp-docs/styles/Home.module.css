@@ -26,6 +26,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-grow: 1;
+  margin-top: 1em;
 }
 
 .footer > div > div {
@@ -33,9 +34,6 @@
 }
 .footer h4 {
   margin-bottom: 1em;
-}
-.footer a {
-  margin-top: 1em;
 }
 
 .title a {
