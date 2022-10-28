@@ -810,6 +810,9 @@ a.hash-link {
 .DocSearch-Button-Placeholder {
   font-family: var(--ifm-font-family-base);
   line-height: 10px;
+  font-family: var(--ifm-font-family-base);
+  line-height: 10px;
+  color: var(--custom-content-color-light) !important;
 }
 
 .prism-code {
@@ -878,11 +881,6 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-modal-background: var(--custom-background-color-diff);
 }
 
-.DocSearch-Button-Placeholder {
-  font-family: var(--ifm-font-family-base);
-  line-height: 10px;
-  color: var(--custom-content-color-light) !important;
-}
 .DocSearch-Button-Key {
   background: var(--custom-background-color-diff-1) !important;
   color: var(--custom-content-color-light) !important;
