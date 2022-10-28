@@ -4,9 +4,6 @@ import { ref } from 'vue'
 
 const allTodos = ref<Todo[]>([])
 
-/**
- * Retrieve all todo for the signed in user
- */
 async function fetchTodos() {
   try {
     const { data: todos, error } = await supabase.from('todos').select('*').order('id')
@@ -15,12 +12,12 @@ async function fetchTodos() {
       console.log('error', error)
       return
     }
-    // handle for when no todos are returned
+
     if (todos === null) {
       allTodos.value = []
       return
     }
-    // store response to allTodos
+
     allTodos.value = todos
     console.log('got todos!', allTodos.value)
   } catch (err) {
@@ -28,9 +25,6 @@ async function fetchTodos() {
   }
 }
 
-/**
- *  Add a new todo to supabase
- */
 async function addTodo(todo: Todo): Promise<null | Todo> {
   try {
     const { data, error } = await supabase.from('todos').insert(todo).single()
@@ -50,9 +44,6 @@ async function addTodo(todo: Todo): Promise<null | Todo> {
   }
 }
 
-/**
- * Targets a specific todo via its record id and updates the is_completed attribute.
- */
 async function updateTaskCompletion(todo: Todo, isCompleted: boolean) {
   try {
     const { error } = await supabase
@@ -74,9 +65,6 @@ async function updateTaskCompletion(todo: Todo, isCompleted: boolean) {
   }
 }
 
-/**
- *  Deletes a todo via its id
- */
 async function deleteTodo(todo: Todo) {
   try {
     await supabase.from('todos').delete().eq('id', todo.id)

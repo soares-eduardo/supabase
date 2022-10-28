@@ -39,9 +39,6 @@ export default defineComponent({
 
     const task = ref('')
 
-    /**
-     * Wrapper function adding a new todo for additional client-side error handling.
-     */
     async function insertTask() {
       // Guard for short task descriptions which will fail db policy.
       if (task.value.length <= 3) {

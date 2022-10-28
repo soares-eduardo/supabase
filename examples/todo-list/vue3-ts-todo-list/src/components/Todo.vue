@@ -29,8 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { updateTaskCompletion, deleteTodo } from '@/vuetils/useTodo'
-import { allTodos } from '@/vuetils/useTodo'
+import { updateTaskCompletion, deleteTodo, allTodos } from '@/vuetils/useTodo'
 
 export default defineComponent({
   name: 'Todo',
@@ -41,7 +40,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    // Removes todo from supbase and also from app state
     function clearTodo() {
       deleteTodo(props.todo).then(() => {
         allTodos.value = allTodos.value.filter(todo => todo.id != props.todo.id)
