@@ -18,7 +18,7 @@ export const convertKeyValue = (value: string) => {
   const temp = []
   if (value) {
     const obj = JSON.parse(value)
-    for (var key in obj) {
+    for (let key in obj) {
       temp.push({ name: key, value: obj[key] })
     }
   }

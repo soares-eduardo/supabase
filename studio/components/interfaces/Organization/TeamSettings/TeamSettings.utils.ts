@@ -4,9 +4,9 @@ import { PermissionAction } from '@supabase/shared-types/out/constants'
 
 export const getRolesManagementPermissions = (
   roles: Role[]
-): { rolesAddable: Number[]; rolesRemovable: Number[] } => {
-  const rolesAddable: Number[] = []
-  const rolesRemovable: Number[] = []
+): { rolesAddable: number[]; rolesRemovable: number[] } => {
+  const rolesAddable: number[] = []
+  const rolesRemovable: number[] = []
   if (!roles) return { rolesAddable, rolesRemovable }
 
   const availableRoles = ['Owner', 'Administrator', 'Developer']

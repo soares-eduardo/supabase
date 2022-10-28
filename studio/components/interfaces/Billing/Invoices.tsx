@@ -151,14 +151,14 @@ const Invoices: FC<Props> = ({ projectRef }) => {
                           type="default"
                           size="tiny"
                           disabled={page === 1}
-                          onClick={async () => await fetchInvoices(page - 1)}
+                          onClick={async () => fetchInvoices(page - 1)}
                         />
                         <Button
                           icon={<IconChevronRight />}
                           type="default"
                           size="tiny"
                           disabled={page * PAGE_LIMIT >= count}
-                          onClick={async () => await fetchInvoices(page + 1)}
+                          onClick={async () => fetchInvoices(page + 1)}
                         />
                       </div>
                     </div>

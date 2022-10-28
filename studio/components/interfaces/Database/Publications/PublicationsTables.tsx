@@ -25,9 +25,6 @@ const PublicationsTables: FC<Props> = ({ selectedPublication, onSelectBack }) =>
             !meta.excludedSchemas.includes(table.schema) && table.name.includes(filterString)
         )
 
-  // const publication = selectedPublication
-  // const enabledForAllTables = publication.tables == null
-
   // const toggleReplicationForAllTables = async (publication: any, disable: boolean) => {
   //   const toggle = disable ? 'disable' : 'enable'
   //   confirmAlert({

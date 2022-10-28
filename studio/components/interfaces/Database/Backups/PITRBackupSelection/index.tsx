@@ -8,7 +8,6 @@ import { post } from 'lib/common/fetch'
 import { API_URL, PROJECT_STATUS } from 'lib/constants'
 import { useStore, useFlag } from 'hooks'
 import Loading from 'components/ui/Loading'
-import UpgradeToPro from 'components/ui/UpgradeToPro'
 import ConfirmationModal from 'components/ui/ConfirmationModal'
 
 import BackupsError from '../BackupsError'

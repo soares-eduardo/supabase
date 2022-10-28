@@ -7,10 +7,9 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 
 import { checkPermissions, useStore, useFlag } from 'hooks'
-import { STRIPE_PRODUCT_IDS } from 'lib/constants'
+import { STRIPE_PRODUCT_IDS, PRICING_TIER_PRODUCT_IDS } from 'lib/constants'
 import { formatBytes } from 'lib/helpers'
 
-import { PRICING_TIER_PRODUCT_IDS } from 'lib/constants'
 import { chargeableProducts } from '../PAYGUsage/PAYGUsage.constants'
 import { PaygStats, ProductFeature } from '../PAYGUsage/PAYGUsage.types'
 import { deriveFeatureCost, deriveProductCost } from '../PAYGUsage/PAYGUsage.utils'

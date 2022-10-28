@@ -91,7 +91,6 @@ const EnterpriseUpdate: FC<Props> = ({
     setIsRefreshingPreview(false)
   }
 
-  // Last todo to support enterprise billing on dashboard + E2E test
   const onConfirmPayment = async () => {
     const payload = {
       ...formSubscriptionUpdatePayload(

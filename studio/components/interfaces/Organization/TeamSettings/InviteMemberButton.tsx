@@ -13,7 +13,7 @@ interface Props {
   user: User
   members: Member[]
   roles: Role[]
-  rolesAddable: Number[]
+  rolesAddable: number[]
 }
 
 const InviteMemberButton: FC<Props> = ({ user, members = [], roles = [], rolesAddable = [] }) => {

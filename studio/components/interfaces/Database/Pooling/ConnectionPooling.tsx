@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
-import { Typography } from '@supabase/ui'
+import { Typography, Input } from '@supabase/ui'
 import { useStore } from 'hooks'
 import { pluckObjectFields } from 'lib/helpers'
 import Loading from 'components/ui/Loading'
@@ -11,7 +11,6 @@ import { API_URL } from 'lib/constants'
 import { patch } from 'lib/common/fetch'
 import ToggleField from 'components/to-be-cleaned/forms/ToggleField'
 import SchemaFormPanel from 'components/to-be-cleaned/forms/SchemaFormPanel'
-import { Input } from '@supabase/ui'
 
 interface Props {}
 

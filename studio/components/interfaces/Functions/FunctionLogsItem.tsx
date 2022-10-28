@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
 import { FC } from 'react'
 import { observer } from 'mobx-react-lite'
-import { Badge, IconClipboard, IconExternalLink, IconGlobe, Typography } from '@supabase/ui'
 import Table from 'components/to-be-cleaned/Table'
 
 import SimpleCodeBlock from 'components/to-be-cleaned/SimpleCodeBlock'
@@ -14,11 +13,6 @@ interface Props {
 }
 
 const FunctionLogsItem: FC<Props> = ({ log, onClick }) => {
-  const islogConfirmed = log.email_confirmed_at || log.phone_confirmed_at
-
-  const router = useRouter()
-  const { ref } = router.query
-
   return (
     <Table.tr key={log.id} onClick={onClick}>
       <Table.td className="whitespace-nowrap">

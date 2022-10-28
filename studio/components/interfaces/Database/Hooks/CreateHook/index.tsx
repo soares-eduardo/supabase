@@ -15,8 +15,6 @@ import ServiceConfigForm from './ServiceConfigForm'
 
 import { formatArguments, convertKeyValue, hasWhitespace, isValidHttpUrl } from '../Hooks.utils'
 
-// [Joshen] TODO: Refactor to use Form component
-
 class CreateHookFormState {
   id: number | undefined
   originalName: string | undefined
@@ -86,7 +84,6 @@ class CreateHookFormState {
     this.schema = { value: hook?.schema ?? '' }
     this.table = { value: hook?.table ?? '' }
     this.tableId = { value: hook?.table_id ?? '' }
-    // TODO: hook obj doesn't have service field
     this.hookService = { value: 'http_request' }
     /**
      * hook.function_args contains 5 params in order

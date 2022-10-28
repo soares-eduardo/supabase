@@ -6,7 +6,7 @@ import { Button, IconHelpCircle, Toggle, Modal } from '@supabase/ui'
 
 import { useStore } from 'hooks'
 import { post, patch } from 'lib/common/fetch'
-import { API_URL, PROJECT_STATUS } from 'lib/constants'
+import { API_URL, PROJECT_STATUS, STRIPE_PRODUCT_IDS } from 'lib/constants'
 import { getURL } from 'lib/helpers'
 import Divider from 'components/ui/Divider'
 import {
@@ -15,7 +15,6 @@ import {
   StripeSubscription,
   AddNewPaymentMethodModal,
 } from './'
-import { STRIPE_PRODUCT_IDS } from 'lib/constants'
 import { SubscriptionPreview } from './Billing.types'
 import { formSubscriptionUpdatePayload } from './Billing.utils'
 import UpdateSuccess from './UpdateSuccess'
