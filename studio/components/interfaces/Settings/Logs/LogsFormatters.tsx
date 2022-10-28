@@ -207,7 +207,7 @@ export function jsonSyntaxHighlight(input: Object) {
     /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
 
     function (match) {
-      var cls = 'number text-tomato-900'
+      let cls = 'number text-tomato-900'
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
           cls = 'key text-scale-1200'

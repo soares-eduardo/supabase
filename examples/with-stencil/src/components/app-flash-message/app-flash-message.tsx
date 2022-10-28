@@ -77,10 +77,10 @@ export class AppFlashMessage {
         class={{
           'app-alert': true,
           'success': this.type === 'success',
-          'hidden': this.show == false,
+          'hidden': this.show
         }}
         role="alert"
-        aria-hidden={this.show == false ? true : false}
+        aria-hidden={this.show ? true : false}
       >
         {this.closable && (
           <span class="app-close-btn" onClick={() => this.hideMessage()}>

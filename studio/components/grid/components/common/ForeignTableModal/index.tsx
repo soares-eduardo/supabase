@@ -71,7 +71,6 @@ export const ForeignTableModal: React.FC<ForeignTableModalProps> = ({
       queryChains = queryChains.filter(column, operator, value)
     }
 
-    // TODO: How to let users know that filter result limit at 20 results
     // should we allow a higher value?
     const sql = queryChains.range(0, 20).toSql()
     const { data, error } = await state.onSqlQuery(sql)

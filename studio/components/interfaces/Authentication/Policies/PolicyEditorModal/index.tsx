@@ -161,10 +161,10 @@ const PolicyEditorModal: FC<Props> = ({
     payload: PostgresPolicyCreatePayload | PostgresPolicyUpdatePayload
   ) => {
     // @ts-ignore
-    const hasError = isNewPolicy ? await onCreatePolicy(payload) : await onUpdatePolicy(payload)
+    const hasError = isNewPolicy ? onCreatePolicy(payload) : onUpdatePolicy(payload)
     hasError ? onViewEditor() : onSaveSuccess()
   }
-
+  
   return (
     <Modal
       size={view === POLICY_MODAL_VIEWS.SELECTION ? 'medium' : 'xxlarge'}

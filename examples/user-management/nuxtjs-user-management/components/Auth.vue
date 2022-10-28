@@ -37,7 +37,7 @@ export default {
       console.log("ENV", process.env.NUXT_PUBLIC_SUPABASE_URL);
       try {
         this.formValues.loader = true;
-        const { error, user } = await supabase.auth.signIn({
+        const { error } = await supabase.auth.signIn({
           email: this.formValues.email,
         });
 

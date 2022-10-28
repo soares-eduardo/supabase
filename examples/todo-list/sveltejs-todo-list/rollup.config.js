@@ -1,6 +1,5 @@
 import run from '@rollup/plugin-run'
 import svelte from 'rollup-plugin-svelte'
-// import { skypackResolver } from '@vinicius73/rollup-plugin-skypack-resolver'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 

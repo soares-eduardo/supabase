@@ -1,21 +1,21 @@
-var SUPABASE_URL = 'https://ernhobnpmmupjnmxpfbt.supabase.co'
-var SUPABASE_KEY =
+let SUPABASE_URL = 'https://ernhobnpmmupjnmxpfbt.supabase.co'
+let SUPABASE_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxMzA5ODU0NCwiZXhwIjoxOTI4Njc0NTQ0fQ.Z9bRrfaL2oGhSuyBckFcdcnRIJDelWJ1II98OnEtLO0'
 
-var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+let supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
 window.userToken = null
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  var signUpForm = document.querySelector('#sign-up')
+  let signUpForm = document.querySelector('#sign-up')
   signUpForm.onsubmit = signUpSubmitted.bind(signUpForm)
 
-  var logInForm = document.querySelector('#log-in')
+  let logInForm = document.querySelector('#log-in')
   logInForm.onsubmit = logInSubmitted.bind(logInForm)
 
-  var userDetailsButton = document.querySelector('#user-button')
+  let userDetailsButton = document.querySelector('#user-button')
   userDetailsButton.onclick = fetchUserDetails.bind(userDetailsButton)
 
-  var logoutButton = document.querySelector('#logout-button')
+  let logoutButton = document.querySelector('#logout-button')
   logoutButton.onclick = logoutSubmitted.bind(logoutButton)
 })
 

@@ -1,11 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, StyleSheet, SafeAreaView, FlatList} from 'react-native';
 import {Styles} from '../lib/constants';
-import {Text} from 'react-native-elements';
 import {supabaseClient} from '../lib/initSupabase';
 import {useUser} from './UserContext';
 
-import {Button, Input, ListItem, CheckBox} from 'react-native-elements';
+import {Button, Input, ListItem, CheckBox, Text} from 'react-native-elements';
 /** URL polyfill. Required for Supabase queries to work in React Native. */
 import 'react-native-url-polyfill/auto';
 export default function TodoList() {

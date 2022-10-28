@@ -34,22 +34,19 @@ type CALLBACK_ACTIONTYPE = {
 }
 
 const CallbackReducer = (state: CallbackInitialState, action: CALLBACK_ACTIONTYPE) => {
-  switch (action.type) {
-    case 'INIT_CALLBACK': {
-      return {
-        ...state,
-        onAddColumn: action.payload.onAddColumn,
-        onAddRow: action.payload.onAddRow,
-        onError: action.payload.onError,
-        onEditRow: action.payload.onEditRow,
-        onEditColumn: action.payload.onEditColumn,
-        onDeleteColumn: action.payload.onDeleteColumn,
-        onSqlQuery: action.payload.onSqlQuery,
-      }
+  if (action.type == 'INIT_CALLBACK') {
+    return {
+      ...state,
+      onAddColumn: action.payload.onAddColumn,
+      onAddRow: action.payload.onAddRow,
+      onError: action.payload.onError,
+      onEditRow: action.payload.onEditRow,
+      onEditColumn: action.payload.onEditColumn,
+      onDeleteColumn: action.payload.onDeleteColumn,
+      onSqlQuery: action.payload.onSqlQuery,
     }
-
-    default:
-      return state
+  } else {
+    return state;
   }
 }
 

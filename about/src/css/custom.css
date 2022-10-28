@@ -623,15 +623,14 @@ div[class^='docSidebarContainer_'] {
 div[class^='sidebar_'] {
   font-size: 0.85rem;
 }
+
 div[class^='sidebar_'] .menu {
+  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   background: var(--ifm-sidebar-background);
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   padding-bottom: var(--ifm-spacing-vertical);
 }
 
-div[class^='sidebar_'] .menu {
-  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
-}
 div[class^='sidebar_'] .menu .menu__link {
   padding-right: var(--ifm-menu-link-padding-horizontal);
   color: var(--custom-color-content);
@@ -656,18 +655,19 @@ div[class^='sidebar_'] .menu__link.menu__link--active:not(.menu__link--sublist) 
 
 div[class^='codeBlockContent'],
 div[class*=' codeBlockContent'],
+
 .prism-code {
   background-color: var(--ifm-code-background-dark) !important;
-}
-.code-with-header {
-  border-radius: 4px;
-  overflow: hidden;
-}
-.prism-code {
   padding: 0 !important;
   margin-bottom: 0;
   background-color: var(--ifm-code-background-dark);
 }
+
+.code-with-header {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 .code-with-header pre {
   border-radius: 0 0 4px 4px;
 }
@@ -801,6 +801,8 @@ a.hash-link {
 
 .DocSearch-Button {
   border-radius: 8px !important;
+  background: var(--custom-background-color-diff) !important;
+  font-family: var(--ifm-font-family-base);
 }
 .DocSearch-Button > svg {
   display: none;
@@ -808,6 +810,9 @@ a.hash-link {
 .DocSearch-Button-Placeholder {
   font-family: var(--ifm-font-family-base);
   line-height: 10px;
+  font-family: var(--ifm-font-family-base);
+  line-height: 10px;
+  color: var(--custom-content-color-light) !important;
 }
 
 .prism-code {
@@ -876,16 +881,6 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-modal-background: var(--custom-background-color-diff);
 }
 
-.DocSearch-Button {
-  border-radius: 6px !important;
-  background: var(--custom-background-color-diff) !important;
-  font-family: var(--ifm-font-family-base);
-}
-.DocSearch-Button-Placeholder {
-  font-family: var(--ifm-font-family-base);
-  line-height: 10px;
-  color: var(--custom-content-color-light) !important;
-}
 .DocSearch-Button-Key {
   background: var(--custom-background-color-diff-1) !important;
   color: var(--custom-content-color-light) !important;
@@ -893,6 +888,7 @@ html[data-theme='dark'] .DocSearch {
   box-sizing: initial;
   margin-top: 3px;
 }
+
 .DocSearch-SearchBar form {
   background: var(--custom-background-color-diff) !important;
   color: var(--custom-content-color) !important;

@@ -1,12 +1,10 @@
 import dayjs from 'dayjs'
 import { FC } from 'react'
 import { observer } from 'mobx-react-lite'
-import { IconClipboard, IconGlobe } from '@supabase/ui'
 import Table from 'components/to-be-cleaned/Table'
 
 import { useRouter } from 'next/router'
 import { useStore } from 'hooks'
-// import _functionDropdown from './_functionDropdown'
 
 interface Props {
   function: any
@@ -14,12 +12,11 @@ interface Props {
 
 const FunctionsListItem: FC<Props> = ({ function: item }) => {
   const { ui } = useStore()
-  const is_functionConfirmed = item.email_confirmed_at || item.phone_confirmed_at
 
   const router = useRouter()
   const ref = ui?.selectedProject?.ref
 
-  return (
+  return (  
     <Table.tr
       key={item.id}
       onClick={() => {

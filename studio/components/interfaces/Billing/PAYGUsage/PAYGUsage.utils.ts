@@ -1,4 +1,4 @@
-import { get, maxBy, sum } from 'lodash'
+import { sum } from 'lodash'
 import { ChargeableProduct, PaygStats, ProductFeature } from './PAYGUsage.types'
 
 /**
@@ -22,7 +22,6 @@ export const deriveFeatureCost = (paygStats: PaygStats | undefined, feature: Pro
    *
    * if the number is negative, then Math.max should return 0
    *
-   * todo: move this logic to backend @mildtomato
    */
   if (rawUsage && feature.freeQuota) {
     rawUsage = Math.max(0, rawUsage - feature.freeQuota)

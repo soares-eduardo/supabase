@@ -19,8 +19,8 @@ function telemetry() {
 
 function pageState() {
   ;(function () {
-    var pushState = history.pushState
-    var replaceState = history.replaceState
+    let pushState = history.pushState
+    let replaceState = history.replaceState
 
     history.pushState = function () {
       pushState.apply(history, arguments)

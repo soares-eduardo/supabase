@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { useEffect, useState, useMemo } from 'react'
-import { Alert, Button, IconEye, IconEyeOff, Input } from '@supabase/ui'
+import { Alert, Button, IconEye, IconEyeOff } from '@supabase/ui'
 import DataGrid from '@supabase/react-data-grid'
 
 import LogSelection, { LogSelectionProps } from './LogSelection'
@@ -23,7 +23,6 @@ interface Props {
   isLoading?: boolean
   error?: LogQueryError | null
   showDownload?: boolean
-  // TODO: move all common params to a context to avoid prop drilling
   queryType?: QueryType
   projectRef: string
   params: LogSelectionProps['params']

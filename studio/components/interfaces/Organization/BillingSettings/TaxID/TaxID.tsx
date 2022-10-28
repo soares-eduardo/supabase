@@ -92,9 +92,8 @@ const TaxID: FC<Props> = ({ loading, taxIds, onTaxIdsUpdated }) => {
     // To make things simple we delete all existing ones and create new ones from this session
     setIsSaving(true)
     try {
-      const deletedIds = await Promise.all(
         taxIds.map(async (taxId: any) => {
-          return await delete_(`${API_URL}/organizations/${slug}/tax-ids`, { id: taxId.id })
+          return delete_(`${API_URL}/organizations/${slug}/tax-ids`, { id: taxId.id })
         })
       )
 

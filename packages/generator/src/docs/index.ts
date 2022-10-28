@@ -32,7 +32,7 @@ export default async function DocGenerator({
       break
 
     default:
-      await console.log('Unrecognized type: ', type)
+      console.log('Unrecognized type: ', type)
       break
   }
   return 'Done'

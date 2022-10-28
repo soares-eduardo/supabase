@@ -8,7 +8,6 @@ import {
   Popover,
   Alert,
 } from '@supabase/ui'
-import Flag from 'components/ui/Flag/Flag'
 import {
   EXPLORER_DATEPICKER_HELPERS,
   LogsTableName,

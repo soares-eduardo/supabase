@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import { Button } from '@supabase/ui'
 import { PostgresTable } from '@supabase/postgres-meta'
-import { checkPermissions, useStore } from 'hooks'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
 
 interface Props {
   selectedSchema: string

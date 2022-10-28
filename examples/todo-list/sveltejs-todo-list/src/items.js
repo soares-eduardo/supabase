@@ -3,9 +3,6 @@
 import { createClient } from '@supabase/supabase-js'
 // import { Socket } = '@supabase/realtime-js'
 
-// var socket = new Socket(process.env.REALTIME_URL)
-// socket.connect()
-
 let importEnv = true
 try {
   if (process.env.NODE_ENV === 'test') importEnv = false
@@ -49,8 +46,7 @@ export const items = () => {
     return []
   }
 }
-// https://supabase.com/docs/library/subscribe/
-// TODO docs #179
+
 export const subscription = () => {
   return supabase
     .from(

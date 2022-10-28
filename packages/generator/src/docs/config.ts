@@ -1,4 +1,4 @@
-import template from './templates/ConfigTemplate'
+  import template from './templates/ConfigTemplate'
 import type { ConfigSpec } from '../types/ConfigSpec'
 
 const yaml = require('js-yaml')
@@ -16,14 +16,10 @@ export default async function gen(inputFileName: string, outputDir: string) {
   const spec = yaml.load(fs.readFileSync(inputFileName, 'utf8'))
   // console.log('spec', spec)
 
-  switch (spec.configspec) {
-    case '001':
-      await gen_v001(spec, outputDir)
-      break
-
-    default:
-      console.log('Unrecognized specifcation version:', spec.configspec)
-      break
+  if (spec.configSpec == '001') {
+    await gen_v001(spec, outputDir)
+  } else {
+    console.log('Unrecognized specifcation version:', spec.configspec)
   }
 }
 

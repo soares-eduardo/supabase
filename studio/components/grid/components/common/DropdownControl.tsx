@@ -10,8 +10,8 @@ type DropdownControlProps = {
   }[]
   onSelect: (value: string | number) => void
   className?: string
-  side?: 'bottom' | 'left' | 'top' | 'right' | undefined
-  align?: 'start' | 'center' | 'end' | undefined
+  side: 'bottom' | 'left' | 'top' | 'right' | undefined
+  align: 'start' | 'center' | 'end' | undefined
   isNested?: boolean
 }
 

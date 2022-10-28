@@ -10,7 +10,7 @@ export default function Auth() {
 
   async function signInWithEmail() {
     setLoading(true)
-    const { user, error } = await supabase.auth.signIn({
+    const { error } = await supabase.auth.signIn({
       email: email,
       password: password,
     })
@@ -21,7 +21,7 @@ export default function Auth() {
 
   async function signUpWithEmail() {
     setLoading(true)
-    const { user, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email: email,
       password: password,
     })

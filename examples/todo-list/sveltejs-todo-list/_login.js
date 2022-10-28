@@ -20,14 +20,12 @@ async function login() {
     if (error.response === undefined) {
       // No response from server
     } else {
-      const server_response = error.response
       // Here you can further process the response ..
     }
 
     if (error.status === undefined) {
       // No HTTP status code
     } else {
-      const http_code = error.status
       // Further processing ..
     }
   }

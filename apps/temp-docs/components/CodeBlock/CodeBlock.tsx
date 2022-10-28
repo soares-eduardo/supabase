@@ -39,7 +39,6 @@ function CodeBlock(props: Props) {
   SyntaxHighlighter.registerLanguage('py', py)
   SyntaxHighlighter.registerLanguage('sql', sql)
 
-  // const large = props.size === 'large' ? true : false
   const large = false
 
   return (

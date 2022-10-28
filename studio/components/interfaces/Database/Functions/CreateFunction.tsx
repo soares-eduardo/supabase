@@ -6,9 +6,7 @@ import {
   Input,
   Select,
   SidePanel,
-  Typography,
   IconTrash,
-  Divider,
   Radio,
   IconPlus,
   Toggle,
@@ -118,7 +116,7 @@ function convertArgumentTypes(value: string) {
 function convertConfigParams(value: Dictionary<any>) {
   const temp = []
   if (value) {
-    for (var key in value) {
+    for (let key in value) {
       temp.push({ name: key, value: value[key] })
     }
   }
@@ -206,7 +204,6 @@ class CreateFunctionStore implements ICreateFunctionStore {
           // @ts-ignore
           this.formState[key].value.push(value)
         } else {
-          const values = [value]
           // @ts-ignore
           this.formState[key] = { value: [value] }
         }

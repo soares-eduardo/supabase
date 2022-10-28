@@ -75,14 +75,14 @@ export class SqlRowService implements IRowService {
       })
 
     const query = queryChains.toSql()
-    return await this.onSqlQuery(query)
+    return this.onSqlQuery(query)
   }
 
   // For deleting all rows without any filter (clear entire table)
   async truncate() {
     let queryChains = this.query.from(this.table.name, this.table.schema ?? undefined).truncate()
     const query = queryChains.toSql()
-    return await this.onSqlQuery(query)
+    return this.onSqlQuery(query)
   }
 
   async fetchPage(page: number, rowsPerPage: number, filters: Filter[], sorts: Sort[]) {
