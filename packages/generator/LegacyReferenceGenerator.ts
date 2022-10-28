@@ -113,7 +113,6 @@ function generateParameters(tsDefinition: any) {
     functionDeclaration.signatures[0].parameters // PMC: seems flaky.. why the [0]?
   if (!paramDefinitions) return ''
 
-  // const paramsComments: TsDoc.CommentTag = tsDefinition.comment?.tags?.filter(x => x.tag == 'param')
   let parameters = paramDefinitions
     .map((x) => recurseThroughParams(x))
     .join(`\n`)
@@ -322,7 +321,6 @@ function extractParamTypeAsString(paramDefinition) {
 function extractTsDocNode(nodeToFind: string, definition: any) {
   const nodePath = nodeToFind.split('.')
   let i = 0
-  let previousNode = definition
   let currentNode = definition
   while (i < nodePath.length) {
     previousNode = currentNode

@@ -10,15 +10,10 @@ const { writeToDisk } = Helpers
 export default async function gen(inputFileName: string, outputDir: string) {
   const spec = yaml.load(fs.readFileSync(inputFileName, 'utf8'))
   // console.log('spec', spec)
-
-  switch (spec.sdkspec) {
-    case '001':
-      await gen_v001(spec, outputDir)
-      break
-
-    default:
-      console.log('Unrecognized specification version:', spec.sdkspec)
-      break
+  if(spec.sdkspec == '001') {
+    await gen_v001(spec, outputDir)
+  } else {
+    console.log('Unrecognized specification version:', spec.sdkspec)
   }
 }
 

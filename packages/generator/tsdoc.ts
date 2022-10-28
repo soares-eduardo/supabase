@@ -12,14 +12,11 @@ const argv = require('minimist')(process.argv.slice(2))
 main(argv['_'], argv)
 
 function handleInput(command: string, options: any) {
-  switch (command) {
-    case 'dereference':
-      dereference(options)
-      break
 
-    default:
-      console.log('Unrecognized command:', command)
-      break
+  if (command == 'dereference') {
+    dereference(options)
+  } else {
+    console.log('Unrecognized command:', command)
   }
 }
 
