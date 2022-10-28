@@ -888,6 +888,7 @@ html[data-theme='dark'] .DocSearch {
   box-sizing: initial;
   margin-top: 3px;
 }
+
 .DocSearch-SearchBar form {
   background: var(--custom-background-color-diff) !important;
   color: var(--custom-content-color) !important;
