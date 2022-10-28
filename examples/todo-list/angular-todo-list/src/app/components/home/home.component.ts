@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
   async handleLogout(): Promise<void> {
     try {
-      await this.supabase.signOut()
+      this.supabase.signOut()
       await this.router.navigate(['/auth'])
     } catch (error) {
       console.error(error)
