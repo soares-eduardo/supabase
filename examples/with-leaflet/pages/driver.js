@@ -9,7 +9,7 @@ import PageLayout from 'components/PageLayout'
 const MapInput = dynamic(() => import('components/MapInput'), { ssr: false })
 
 function randomPosition() {
-  var array = [
+  let array = [
     {
       lat: 1.3489728457596013,
       lng: 103.77043978311998,

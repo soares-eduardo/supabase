@@ -195,7 +195,6 @@ module.exports = ui({
       //   //   800: '#38BC81',
       //   //   900: '#10633E',
       //   // },
-      //   // Joshen TODO: At the end just rearrange the values
       //   dark: {
       //     100: '#eeeeee',
       //     200: '#e0e0e0',

@@ -19,22 +19,13 @@ export default function SignIn({ role = 'DRIVER' }) {
     })
   }
 
-  async function updateUserRole(user) {
-    if (!user || user.user_metadata?.role) return
-
-    // update user role
-    await supabase.auth.update({
-      data: { role },
-    })
-  }
-
   async function onSubmit(event) {
     event.preventDefault()
 
     try {
       if (action === 'SIGNUP') {
         const { email, password, role } = formData
-        const { error, user } = await supabase.auth.signUp({ email, password })
+        const { error } = await supabase.auth.signUp({ email, password })
         if (error) throw error
 
         // update user role

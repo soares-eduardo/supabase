@@ -55,7 +55,7 @@ export default function MapView({ center, zoom }) {
 }
 
 function randomColor() {
-  var array = ['black', 'magenta', 'blue', 'indigo', 'green', 'blueviolet']
+  let array = ['black', 'magenta', 'blue', 'indigo', 'green', 'blueviolet']
   return array[Math.floor(Math.random() * array.length)]
 }
 
