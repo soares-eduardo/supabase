@@ -655,18 +655,19 @@ div[class^='sidebar_'] .menu__link.menu__link--active:not(.menu__link--sublist) 
 
 div[class^='codeBlockContent'],
 div[class*=' codeBlockContent'],
+
 .prism-code {
   background-color: var(--ifm-code-background-dark) !important;
-}
-.code-with-header {
-  border-radius: 4px;
-  overflow: hidden;
-}
-.prism-code {
   padding: 0 !important;
   margin-bottom: 0;
   background-color: var(--ifm-code-background-dark);
 }
+
+.code-with-header {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 .code-with-header pre {
   border-radius: 0 0 4px 4px;
 }
