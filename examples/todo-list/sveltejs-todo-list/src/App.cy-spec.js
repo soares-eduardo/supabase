@@ -1,5 +1,3 @@
-// import {internal} from 'svelte'
-// import svelte from 'svelte'
 import { mount } from 'cypress-svelte-unit-test'
 import App from './App.svelte'
 
