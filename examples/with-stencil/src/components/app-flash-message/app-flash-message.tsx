@@ -4,7 +4,7 @@
  * @component AppFlashMessage
  */
 
-import { Component, h, Prop, Watch } from '@stencil/core';
+import { Component, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'app-flash-message',
