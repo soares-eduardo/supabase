@@ -16,12 +16,12 @@ export const getRolesManagementPermissions = (
     if (!selectedRole) return
 
     const canAdd = checkPermissions(PermissionAction.CREATE, 'auth.subject_roles', {
-      resource: { role_id: selectedRole!.id },
+      resource: { role_id: selectedRole.id },
     })
     if (canAdd) rolesAddable.push(selectedRole.id)
 
     const canRemove = checkPermissions(PermissionAction.DELETE, 'auth.subject_roles', {
-      resource: { role_id: selectedRole!.id },
+      resource: { role_id: selectedRole.id },
     })
     if (canRemove) rolesRemovable.push(selectedRole.id)
   })

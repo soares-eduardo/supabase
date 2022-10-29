@@ -43,7 +43,7 @@ const AddColumnHeader: React.FC<AddColumnHeaderProps> = () => {
   const { onAddColumn } = state
   return (
     <div className="sb-grid-add-column">
-      <Button block type="text" onClick={onAddColumn!} icon={<IconPlus />} />
+      <Button block type="text" onClick={onAddColumn} icon={<IconPlus />} />
     </div>
   )
 }

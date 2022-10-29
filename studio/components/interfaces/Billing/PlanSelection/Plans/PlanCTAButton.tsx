@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Button, IconLoader } from '@supabase/ui'
-import * as Tooltip from '@radix-ui/react-tooltip'
 
 import { useFlag } from 'hooks'
 import { STRIPE_PRODUCT_IDS } from 'lib/constants'

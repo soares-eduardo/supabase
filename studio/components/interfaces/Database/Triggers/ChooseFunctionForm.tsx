@@ -45,7 +45,7 @@ const ChooseFunctionForm: React.FC<ChooseFunctionFormProps> = ({
   setVisible,
 }) => {
   const _localState = useLocalObservable(() => new ChooseFunctionFormStore())
-  _localState.triggerFunctions = triggerFunctions as any
+  _localState.triggerFunctions = triggerFunctions 
 
   function selectFunction(id: number) {
     onChange(id)

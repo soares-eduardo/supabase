@@ -150,9 +150,9 @@ class CreateTriggerStore implements ICreateTriggerStore {
   // set first table as default selection
   setDefaultSelectedTable = () => {
     if (this.tables?.length != 0) {
-      this.formState.table.value = (this.tables[0] as any).name
-      this.formState.schema.value = (this.tables[0] as any).schema
-      this.formState.tableId.value = (this.tables[0] as any).id
+      this.formState.table.value = (this.tables[0])).name
+      this.formState.schema.value = (this.tables[0])).schema
+      this.formState.tableId.value = (this.tables[0])).id
     }
   }
 
@@ -161,17 +161,17 @@ class CreateTriggerStore implements ICreateTriggerStore {
   }
 
   setTables = (value: Dictionary<any>[]) => {
-    this.tables = value as any
+    this.tables = value)
     this.setDefaultSelectedTable()
   }
 
   setTriggerFunctions = (value: Dictionary<any>[]) => {
-    this.triggerFunctions = value as any
+    this.triggerFunctions = value)
   }
 
   onFormChange = ({ key, value }: { key: string; value: any }) => {
     if (has(this.formState, key)) {
-      const temp = (this.formState as any)[key]
+      const temp = (this.formState))[key]
       // @ts-ignore
       this.formState[key] = { ...temp, value, error: undefined }
     } else {
@@ -183,8 +183,8 @@ class CreateTriggerStore implements ICreateTriggerStore {
   onSelectFunction = (id: number) => {
     const func = this.triggerFunctions.find((x: any) => x.id == id)
     if (func) {
-      this.formState.functionName.value = (func as any).name
-      this.formState.functionSchema.value = (func as any).schema
+      this.formState.functionName.value = (func)).name
+      this.formState.functionSchema.value = (func)).schema
     }
   }
 
@@ -250,7 +250,7 @@ type CreateTriggerProps = {
 const CreateTrigger: FC<CreateTriggerProps> = ({ trigger, visible, setVisible }) => {
   const { ui, meta } = useStore()
   const _localState = useLocalObservable(() => new CreateTriggerStore())
-  _localState.meta = meta as any
+  _localState.meta = meta)
 
   // for the empty 'no tables' state link
   const router = useRouter()
@@ -258,13 +258,13 @@ const CreateTrigger: FC<CreateTriggerProps> = ({ trigger, visible, setVisible })
 
   useEffect(() => {
     const fetchTables = async () => {
-      await (_localState!.meta as any)!.tables!.load()
-      const tables = (_localState!.meta as any)!.tables.list()
+      await (_localstate.meta))!.tables!.load()
+      const tables = (_localstate.meta))!.tables.list()
       _localState.setTables(tables)
     }
     const fetchFunctions = async () => {
-      await (_localState.meta as any).functions.load()
-      const triggerFuncs = (_localState!.meta as any)!.functions.listTriggerFunctions()
+      await (_localState.meta)).functions.load()
+      const triggerFuncs = (_localstate.meta))!.functions.listTriggerFunctions()
       _localState.setTriggerFunctions(triggerFuncs)
     }
 
@@ -288,8 +288,8 @@ const CreateTrigger: FC<CreateTriggerProps> = ({ trigger, visible, setVisible })
 
         const body = _localState.formState.requestBody
         const response: any = _localState.isEditing
-          ? await (_localState.meta as any).triggers.update(body.id, body)
-          : await (_localState.meta as any).triggers.create(body)
+          ? await (_localState.meta)).triggers.update(body.id, body)
+          : await (_localState.meta)).triggers.create(body)
 
         if (response.error) {
           ui.setNotification({
@@ -390,15 +390,15 @@ const InputName: FC = observer(({}) => {
       label="Name of trigger"
       layout="horizontal"
       placeholder="Name of trigger"
-      value={_localState!.formState.name.value}
+      value={_localstate.formState.name.value}
       onChange={(e) =>
-        _localState!.onFormChange({
+        _localstate.onFormChange({
           key: 'name',
           value: e.target.value,
         })
       }
       size="small"
-      error={_localState!.formState.name.error}
+      error={_localstate.formState.name.error}
       descriptionText="The name is also stored as the actual postgres name of the trigger. Do not use spaces/whitespace."
     />
   )
@@ -411,9 +411,9 @@ const SelectEnabledMode: FC = observer(({}) => {
       id="enabled-mode"
       label="Enabled mode"
       layout="horizontal"
-      value={_localState!.formState.enabledMode.value}
+      value={_localstate.formState.enabledMode.value}
       onChange={(value) =>
-        _localState!.onFormChange({
+        _localstate.onFormChange({
           key: 'enabledMode',
           value: value,
         })
@@ -484,9 +484,9 @@ const SelectOrientation: FC = observer(({}) => {
       id="orientation"
       label="Orientation"
       layout="horizontal"
-      value={_localState!.formState.orientation.value}
+      value={_localstate.formState.orientation.value}
       onChange={(value) =>
-        _localState!.onFormChange({
+        _localstate.onFormChange({
           key: 'orientation',
           value: value,
         })
@@ -514,29 +514,29 @@ const ListboxTable: FC = observer(({}) => {
       id="table"
       label="Table"
       layout="horizontal"
-      value={_localState!.formState.tableId.value}
+      value={_localstate.formState.tableId.value}
       onChange={(id) => {
-        const _table = _localState!.tables.find((x) => x.id === id)
+        const _table = _localstate.tables.find((x) => x.id === id)
         if (_table) {
-          _localState!.onFormChange({
+          _localstate.onFormChange({
             key: 'table',
             value: _table.name,
           })
-          _localState!.onFormChange({
+          _localstate.onFormChange({
             key: 'schema',
             value: _table.schema,
           })
-          _localState!.onFormChange({
+          _localstate.onFormChange({
             key: 'tableId',
             value: id,
           })
         }
       }}
       size="small"
-      error={_localState!.formState.tableId.error}
+      error={_localstate.formState.tableId.error}
       descriptionText="This is the table the trigger will watch for changes. You can only select 1 table for a trigger."
     >
-      {_localState!.tables.map((x) => {
+      {_localstate.tables.map((x) => {
         return (
           <Listbox.Option
             id={x.id}
@@ -581,34 +581,34 @@ const CheckboxEvents: FC = observer(({}) => {
       descriptionText="These are the events that are watched by the trigger, only the events selected above will fire the trigger on the table you've selected."
       size="small"
       onChange={(e) => {
-        const temp = _localState!.formState.events.value
+        const temp = _localstate.formState.events.value
         const value = e.target.checked
           ? union(temp, [e.target.value])
           : without(temp, e.target.value)
-        _localState!.onFormChange({
+        _localstate.onFormChange({
           key: 'events',
           value: value,
         })
       }}
-      error={_localState!.formState.events.error}
+      error={_localstate.formState.events.error}
     >
       <Checkbox
         value="INSERT"
         label="Insert"
         description={'Any insert operation on the table'}
-        checked={_localState!.formState.events.value.includes('INSERT')}
+        checked={_localstate.formState.events.value.includes('INSERT')}
       />
       <Checkbox
         value="UPDATE"
         label="Update"
         description="Any update operation, of any column in the table"
-        checked={_localState!.formState.events.value.includes('UPDATE')}
+        checked={_localstate.formState.events.value.includes('UPDATE')}
       />
       <Checkbox
         value="DELETE"
         label="Delete"
         description="Any deletion of a record"
-        checked={_localState!.formState.events.value.includes('DELETE')}
+        checked={_localstate.formState.events.value.includes('DELETE')}
       />
     </Checkbox.Group>
   )
@@ -622,15 +622,15 @@ const ListboxActivation: FC = observer(({}) => {
       label="Trigger type"
       descriptionText="This determines when your Hook fires"
       onChange={(_value) => {
-        _localState!.onFormChange({
+        _localstate.onFormChange({
           key: 'activation',
           value: _value,
         })
       }}
-      value={_localState!.formState.activation.value}
+      value={_localstate.formState.activation.value}
       layout="horizontal"
       size="small"
-      error={_localState!.formState.activation.error}
+      error={_localstate.formState.activation.error}
     >
       <Listbox.Option
         id={'before'}
@@ -679,7 +679,7 @@ const FunctionForm: FC = observer(({}) => {
         <Typography.Title level={5}>Function to trigger</Typography.Title>
       </div>
       <div className="px-6">
-        {isEmpty(_localState!.formState.functionName.value) ? (
+        {isEmpty(_localstate.formState.functionName.value) ? (
           <FunctionEmpty />
         ) : (
           <FunctionWithArguments />
@@ -694,7 +694,7 @@ const FunctionEmpty: FC = observer(({}) => {
   return (
     <button
       type="button"
-      onClick={() => _localState!.setChooseFunctionFormVisible(true)}
+      onClick={() => _localstate.setChooseFunctionFormVisible(true)}
       className="w-full relative
         transition-all
 
@@ -742,14 +742,14 @@ const FunctionWithArguments: FC = observer(({}) => {
           </div>
           <div className="flex items-center gap-2">
             <Typography.Text type="secondary">
-              {_localState!.formState.functionName.value}
+              {_localstate.formState.functionName.value}
             </Typography.Text>
             <div>
-              <Badge>{_localState!.formState.functionSchema.value}</Badge>
+              <Badge>{_localstate.formState.functionSchema.value}</Badge>
             </div>
           </div>
         </div>
-        <Button type="default" onClick={() => _localState!.setChooseFunctionFormVisible(true)}>
+        <Button type="default" onClick={() => _localstate.setChooseFunctionFormVisible(true)}>
           Change function
         </Button>
       </div>

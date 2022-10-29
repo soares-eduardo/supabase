@@ -165,9 +165,9 @@ class CreateHookStore implements ICreateHookStore {
   // set first table as default selection
   setDefaultSelectedTable = () => {
     if (this.tables?.length != 0) {
-      this.formState.schema.value = (this.tables[0] as any).schema
-      this.formState.table.value = (this.tables[0] as any).name
-      this.formState.tableId.value = (this.tables[0] as any).id
+      this.formState.schema.value = (this.tables[0]).schema
+      this.formState.table.value = (this.tables[0]).name
+      this.formState.tableId.value = (this.tables[0]).id
     }
   }
 
@@ -176,16 +176,16 @@ class CreateHookStore implements ICreateHookStore {
   }
 
   setTables = (value: Dictionary<any>[]) => {
-    this.tables = value as any
+    this.tables = value 
     this.setDefaultSelectedTable()
   }
 
   onFormChange = ({ key, value }: { key: string; value: any }) => {
     if (has(this.formState, key)) {
-      const temp = (this.formState as any)[key] as any
-      ;(this.formState as any)[key] = { ...temp, value, error: undefined }
+      const temp = (this.formState)[key] 
+      ;(this.formState)[key] = { ...temp, value, error: undefined }
     } else {
-      ;(this.formState as any)[key] = { value }
+      ;(this.formState)[key] = { value }
     }
   }
 
@@ -203,27 +203,27 @@ class CreateHookStore implements ICreateHookStore {
     switch (operation) {
       case 'add': {
         if (has(this.formState, key)) {
-          ;(this.formState as any)[key].value.push(value)
+          ;(this.formState)[key].value.push(value)
         } else {
-          ;(this.formState as any)[key] = { value: [value] }
+          ;(this.formState)[key] = { value: [value] }
         }
         break
       }
       case 'delete': {
         if (has(this.formState, key)) {
           const temp = filter(
-            (this.formState as any)[key].value,
+            (this.formState)[key].value,
             (_: any, index: number) => index != idx
-          ) as any
-          ;(this.formState as any)[key].value = temp
+         ) 
+          ;(this.formState)[key].value = temp
         }
         break
       }
       default: {
         if (has(this.formState, key) && !isUndefined(idx)) {
-          ;(this.formState as any)[key].value[idx] = value
+          ;(this.formState)[key].value[idx] = value
         } else {
-          ;(this.formState as any)[key] = { value: [{ value }] }
+          ;(this.formState)[key] = { value: [{ value }] }
         }
       }
     }
@@ -338,7 +338,7 @@ const CreateHook: FC<CreateHookProps> = ({ hook, visible = true, setVisible }) =
       await _localState.meta.tables.load()
       const tables = _localState!.meta!.tables.list(
         (table: any) => !meta.excludedSchemas.includes(table.schema)
-      )
+     )
       _localState.setTables(tables)
     }
 
@@ -435,12 +435,12 @@ const CreateHook: FC<CreateHookProps> = ({ hook, visible = true, setVisible }) =
                               value={serviceHeader.value}
                             />
                           </div>
-                        )
-                      )}
+                       )
+                     )}
                     </div>
                   </div>
                 </>
-              )}
+             )}
 
               {_localState.formState.serviceParams.value.length > 0 && (
                 <>
@@ -470,14 +470,14 @@ const CreateHook: FC<CreateHookProps> = ({ hook, visible = true, setVisible }) =
                               value={serviceParam.value}
                             />
                           </div>
-                        )
-                      )}
+                       )
+                     )}
                     </div>
                   </div>
                 </>
-              )}
+             )}
             </>
-          ) : (
+         ) : (
             <>
               <div className="px-6">
                 <InputName />
@@ -495,11 +495,11 @@ const CreateHook: FC<CreateHookProps> = ({ hook, visible = true, setVisible }) =
               </div>
               <ServiceConfigForm />
             </>
-          )}
+         )}
         </div>
       </CreateHookContext.Provider>
     </SidePanel>
-  )
+ )
 }
 
 export default observer(CreateHook)

@@ -111,7 +111,7 @@ const MembersView = () => {
                       category: 'error',
                       duration: 4000,
                       message: `You do not have permission to update this team member to ${
-                        selectedRole!.name
+                        selectedRole.name
                       }`,
                     })
                   }

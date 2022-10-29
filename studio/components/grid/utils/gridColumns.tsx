@@ -105,7 +105,7 @@ function getColumnEditor(columnDefinition: SupaColumn, columnType: ColumnType) {
       return columnDefinition.format.endsWith('z') ? TimeWithTimezoneEditor : TimeEditor
     }
     case 'enum': {
-      const options = columnDefinition.enum!.map((x) => {
+      const options = columnDefinition.enum.map((x) => {
         return { label: x, value: x }
       })
       return (p: any) => <SelectEditor {...p} options={options} />

@@ -12,7 +12,9 @@ import {
 const combineReducers =
   (...reducers: Function[]) =>
   (state: any = initialState, action: any): any => {
-    for (let i = 0; i < reducers.length; i++) state = reducers[i](state, action)
+    for (const reducer of reducers) {
+      state = reducer(state, action)
+    }
     return state
   }
 

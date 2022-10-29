@@ -3,8 +3,6 @@ import { FC } from 'react'
 import { observer } from 'mobx-react-lite'
 import Table from 'components/to-be-cleaned/Table'
 
-import SimpleCodeBlock from 'components/to-be-cleaned/SimpleCodeBlock'
-import router, { useRouter } from 'next/router'
 // import logDropdown from './logDropdown'
 
 interface Props {
