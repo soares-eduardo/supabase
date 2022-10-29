@@ -66,7 +66,7 @@ const ColumnEditor: FC<Props> = ({
       setErrors({})
       const columnFields = isNewRecord
         ? generateColumnField()
-        : generateColumnFieldFromPostgresColumn(column!, selectedTable)
+        : generateColumnFieldFromPostgresColumn(column, selectedTable)
       setColumnFields(columnFields)
     }
   }, [visible])
@@ -122,7 +122,7 @@ const ColumnEditor: FC<Props> = ({
       if (isEmpty(errors)) {
         const payload = isNewRecord
           ? generateCreateColumnPayload(selectedTable.id, columnFields)
-          : generateUpdateColumnPayload(column!, columnFields)
+          : generateUpdateColumnPayload(column, columnFields)
         const foreignKey = columnFields.foreignKey
           ? { ...columnFields.foreignKey, source_column_name: columnFields.name }
           : undefined

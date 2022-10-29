@@ -204,7 +204,7 @@ const LogTable = ({
     const map = deduped.reduce((acc: LogMap, d: LogData) => {
       acc[d.id] = d
       return acc
-    }, {}) as LogMap
+    }, {})
 
     return [deduped, map]
   }, [stringData])
@@ -233,7 +233,7 @@ const LogTable = ({
     if (!error) return null
     const childProps = {
       isCustomQuery: queryType ? false : true,
-      error: error!,
+      error: error,
     }
     let Renderer = DefaultErrorRenderer
     if (
@@ -373,7 +373,7 @@ const LogTable = ({
                 </>
               ) : null
             }
-            columns={columns as any}
+            columns={columns}
             rowClass={(r) => {
               const row = r as LogData
 
