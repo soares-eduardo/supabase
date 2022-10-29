@@ -75,12 +75,12 @@ const Header = () => {
 }
 
 const Team = () => {
-  interface iIconLink {
+  interface IIconLink {
     link: string
     icon: React.ReactNode
   }
 
-  const IconLink = ({ link, icon }: iIconLink) => {
+  const IconLink = ({ link, icon }: IIconLink) => {
     return (
       <a href={link} target="_blank">
         <div className="opacity-50 transition-opacity hover:opacity-75">{icon}</div>

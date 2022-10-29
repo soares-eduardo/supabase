@@ -1,5 +1,4 @@
-import { Badge, Button, Checkbox, Input, Modal } from '@supabase/ui'
-import { get } from 'lodash'
+import { Badge, Button, Checkbox, Modal } from '@supabase/ui'
 
 import { STORAGE_CLIENT_LIBRARY_MAPPINGS } from '../Storage.constants'
 import { deriveAllowedClientLibraryMethods } from '../Storage.utils'

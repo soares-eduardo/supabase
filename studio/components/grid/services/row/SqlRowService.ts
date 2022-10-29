@@ -47,7 +47,7 @@ export class SqlRowService implements IRowService {
 
     let queryChains = this.query.from(this.table.name, this.table.schema ?? undefined).delete()
 
-    primaryKeys!.forEach((key) => {
+    primaryKeys.forEach((key) => {
       const primaryKeyValues = rows.map((x) => x[key])
       queryChains = queryChains.filter(key, 'in', primaryKeyValues)
     })
@@ -168,7 +168,7 @@ export class SqlRowService implements IRowService {
     }
     const { idx, ...value } = row
     const matchValues: any = {}
-    primaryKeys!.forEach((key) => {
+    primaryKeys.forEach((key) => {
       matchValues[key] = row[key]
       // fix: https://github.com/supabase/grid/issues/94
       // remove primary key from updated value object

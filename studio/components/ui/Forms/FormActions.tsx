@@ -1,5 +1,4 @@
 import { Button } from '@supabase/ui'
-import { ButtonHTMLAttributes } from 'react'
 
 interface Props {
   /**

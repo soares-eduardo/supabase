@@ -1,7 +1,5 @@
-import { TruckIcon } from '@heroicons/react/outline'
 import { Button, Badge } from '@supabase/ui'
 import Link from 'next/link'
-import Controller from './launch-controller.json'
 
 export default function LaunchHero() {
   return (

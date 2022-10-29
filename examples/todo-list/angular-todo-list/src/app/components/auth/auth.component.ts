@@ -24,9 +24,9 @@ export class AuthComponent {
   constructor(private readonly supabase: SupabaseService, private readonly router: Router) {}
 
   async forgotPassword(): Promise<void> {
-    const email = prompt('Please enter your email:')
+    const email = String(prompt('Please enter your email:'))
 
-    let { error } = await this.supabase.resetPassword(email as string)
+    let { error } = await this.supabase.resetPassword(email)
     if (error) {
       console.error('Error: ', error.message)
     } else {

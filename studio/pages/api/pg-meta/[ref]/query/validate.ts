@@ -10,12 +10,11 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
 
-  switch (method) {
-    case 'POST':
-      return handlePost(req, res)
-    default:
-      res.setHeader('Allow', ['POST'])
-      res.status(405).json({ error: { message: `Method ${method} Not Allowed` } })
+  if (method == 'POST') {
+    return handlePost(req, res)
+  } else {
+    res.setHeader('Allow', ['POST'])
+    res.status(405).json({ error: { message: `Method ${method} Not Allowed` } })
   }
 }
 
@@ -30,3 +29,4 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).json({ valid: true })
   }
 }
+

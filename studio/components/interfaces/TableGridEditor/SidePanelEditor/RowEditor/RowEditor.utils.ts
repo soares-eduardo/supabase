@@ -7,7 +7,6 @@ import { uuidv4, minifyJSON, tryParseJson } from 'lib/helpers'
 import { RowField } from './RowEditor.types'
 import {
   JSON_TYPES,
-  NUMERICAL_TYPES,
   DATETIME_TYPES,
   TIME_TYPES,
   TIMESTAMP_TYPES,
@@ -48,7 +47,7 @@ export const generateRowFields = (
       name: column.name,
       comment: parseDescription(column.comment),
       format: column.format,
-      enums: column.enums as any,
+      enums: column.enums,
       defaultValue: parseValue(column.default_value as string, column.format, column.data_type),
       isNullable: column.is_nullable,
       isIdentity: column.is_identity,

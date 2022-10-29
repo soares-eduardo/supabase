@@ -133,12 +133,12 @@ function FeaturedThumb(blog: PostTypes) {
   const authorArray = blog.author.split(',')
 
   const author = []
-  for (let i = 0; i < authorArray.length; i++) {
-    // @ts-ignore
+  for (const singleAuthor of authorArray) {
     author.push(
-      authors.find((authors: any) => {
+      // @ts-ignore
+      authors.find((authors: string) => {
         // @ts-ignore
-        return authors.author_id === authorArray[i]
+        return authors.author_id === singleAuthor
       })
     )
   }

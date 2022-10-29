@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { Article, Product, WeekDayProps } from '../types'
 import _days from './../days.json'
 import ArticleButtonListItem from './ArticleButtonListItem'
-import ProductButton from './ProductButton'
 import ProductButtonListItem from './ProductButtonListItem'
 
 const days = _days as WeekDayProps[]

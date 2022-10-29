@@ -15,7 +15,7 @@ const FlyOut = (props: Props) => {
 
   useEffect(() => {
     function handleScroll() {
-      if (window.pageYOffset > 96) handleCancel()
+      if (window.scrollY > 96) handleCancel()
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)

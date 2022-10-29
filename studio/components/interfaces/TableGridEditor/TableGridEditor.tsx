@@ -5,9 +5,8 @@ import { observer } from 'mobx-react-lite'
 import { useRouter } from 'next/router'
 import { FC, useRef } from 'react'
 
-import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { SchemaView } from 'components/layouts/TableEditorLayout/TableEditorLayout.types'
-import { checkPermissions, useStore } from 'hooks'
+import { useStore } from 'hooks'
 import GridHeaderActions from './GridHeaderActions'
 import NotFoundState from './NotFoundState'
 import SidePanelEditor from './SidePanelEditor'
@@ -113,7 +112,7 @@ const TableGridEditor: FC<Props> = ({
     const tables: PostgresTable[] = meta.tables.list()
     // @ts-ignore
     const table = tables.find((table) => table.id === Number(tableId))
-    const column = find(table!.columns, { name }) as PostgresColumn
+    const column = find(table.columns, { name }) as PostgresColumn
     if (column) {
       onEditColumn(column)
     } else {
@@ -126,7 +125,7 @@ const TableGridEditor: FC<Props> = ({
     // temporary workaround is to list grab the selected table again
     const tables: PostgresTable[] = meta.tables.list()
     const table = tables.find((table) => table.id === Number(tableId))
-    const column = find(table!.columns, { name }) as PostgresColumn
+    const column = find(table.columns, { name }) as PostgresColumn
     onDeleteColumn(column)
   }
 

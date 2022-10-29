@@ -31,7 +31,7 @@ export async function getServerSideProps(context: any) {
     query: gql`
       {
         repository(owner: "supabase", name: "supabase") {
-          discussion(number: ${prams!.id}) {
+          discussion(number: ${prams.id}) {
             id
             number
             title

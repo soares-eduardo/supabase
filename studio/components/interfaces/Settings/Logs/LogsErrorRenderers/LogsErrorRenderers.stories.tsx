@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import DefaultErrorRenderer from './DefaultErrorRenderer'
 import ResourcesExceededErrorRenderer from './ResourcesExceededErrorRenderer'

@@ -25,7 +25,11 @@ export function getInitialGridColumns(
     const stateColumnsFiltered = savedState.gridColumns.filter((x) => x?.name !== '')
 
     for (let i = 0; i < stateColumnsFiltered.length; i++) {
-      const state = stateColumnsFiltered[i]
+      
+    }
+
+    for (const stateColumnFiltered of stateColumnsFiltered) {
+      const state = stateColumnFiltered
       const found = gridColumns.find((y) => y.key === state.key)
       // merge with savedState item props: width
       if (found) result.push({ ...found, width: state.width, frozen: state.frozen })

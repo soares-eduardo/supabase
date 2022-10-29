@@ -1,4 +1,4 @@
-import { Badge, Card, Divider, IconChevronLeft, IconFile, Space } from '@supabase/ui'
+import { Badge, Divider, IconChevronLeft, IconFile } from '@supabase/ui'
 import matter from 'gray-matter'
 import authors from 'lib/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
@@ -115,12 +115,12 @@ function BlogPostPage(props: any) {
   const authorArray = props.blog.author.split(',')
 
   const author = []
-  for (let i = 0; i < authorArray.length; i++) {
+  for (const singleAuthor of authorArray) {
     author.push(
       // @ts-ignore
       authors.find((authors: string) => {
         // @ts-ignore
-        return authors.author_id === authorArray[i]
+        return authors.author_id === singleAuthor
       })
     )
   }

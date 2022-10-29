@@ -15,9 +15,9 @@ export function Shortcuts({ gridRef }: ShortcutsProps) {
 
   React.useEffect(() => {
     function getClientOS() {
-      return navigator?.appVersion.indexOf('Win') !== -1
+      return navigator.platform.indexOf('Win') !== -1
         ? 'windows'
-        : navigator?.appVersion.indexOf('Mac') !== -1
+        : navigator.platform.indexOf('Mac') !== -1
         ? 'macos'
         : 'unknown'
     }

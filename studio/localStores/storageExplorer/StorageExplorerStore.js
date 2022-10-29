@@ -509,7 +509,7 @@ class StorageExplorerStore {
   toggleBucketPublic = async (bucket) => {
     const { name: bucketName } = bucket
 
-    const { data, error } = await this.supabaseClient.storage.updateBucket(bucketName, {
+    const { error } = await this.supabaseClient.storage.updateBucket(bucketName, {
       public: !bucket.public,
     })
     if (error) {

@@ -28,14 +28,11 @@ export default function Description({ content, metadata, onChange = () => {} }) 
   const [value, setValue] = useState(contentText)
   const [isUpdating, setIsUpdating] = useState(false)
 
-  const { ref } = router.query
   const { table, column, rpc } = metadata
 
   const hasChanged = value != contentText
   const animateCss = `transition duration-150`
   const buttonCss = `inline-block text-sm border text-white font-bold rounded py-1 px-3 w-20 cursor-pointer`
-  const primaryCss = `${buttonCss} ${animateCss} bg-gray-500 border-gray-400 hover:border-green-500 hover:bg-green-500 `
-  const secondaryCss = `${buttonCss} ${animateCss} bg-gray-500 border-gray-400 hover:border-red-500 hover:bg-red-500 `
 
   const updateDescription = async () => {
     if (isUpdating) return false

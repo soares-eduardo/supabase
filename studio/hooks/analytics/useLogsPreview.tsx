@@ -80,7 +80,7 @@ function useLogsPreview(
       const { timestamp: tsLimit }: LogData = prevPageData.result[len - 1]
       const isoTsLimit = dayjs.utc(Number(tsLimit / 1000)).toISOString()
       // create new key from params
-      queryParams = genQueryParams({ ...params, iso_timestamp_end: isoTsLimit } as any)
+      queryParams = genQueryParams({ ...params, iso_timestamp_end: isoTsLimit })
     }
     return `${API_URL}/projects/${projectRef}/analytics/endpoints/logs.all?${queryParams}`
   }
@@ -106,7 +106,7 @@ function useLogsPreview(
       ...params,
       sql: genCountQuery(table),
       iso_timestamp_start: latestRefresh,
-    } as any)}`
+    })}`
   }
 
   const { data: countData } = useSWR<Count>(countUrl, get, {

@@ -1,5 +1,4 @@
 import { IconDatabase } from '@supabase/ui'
-import SVG from 'react-inlinesvg'
 
 export const vercelIcon = (
   <div className="bg-black dark:bg-white p-1 flex items-center justify-center rounded">

@@ -7,7 +7,7 @@ import { supabase, fetchUserRoles } from 'lib/Store'
 export default function SupabaseSlackClone({ Component, pageProps }) {
   const [userLoaded, setUserLoaded] = useState(false)
   const [user, setUser] = useState(null)
-  const [session, setSession] = useState(null)
+  const [setSession] = useState(null)
   const [userRoles, setUserRoles] = useState([])
 
   useEffect(() => {

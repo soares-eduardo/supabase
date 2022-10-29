@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { observer } from 'mobx-react-lite'
-import { Button, Dropdown, Divider, IconPlus, Popover } from '@supabase/ui'
+import { Button, Dropdown, IconPlus, Popover } from '@supabase/ui'
 
 import { useStore } from 'hooks'
 import { IS_PLATFORM, PROJECT_STATUS } from 'lib/constants'

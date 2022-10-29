@@ -1,4 +1,3 @@
-import { ReactElement, useState } from 'react'
 import Head from 'next/head'
 import NavBar from '../nav/NavBar'
 import SideBar from '../nav/SideBar'

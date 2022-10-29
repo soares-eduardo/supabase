@@ -305,8 +305,8 @@ const CreateFunction: FC<CreateFunctionProps> = ({ func, visible, setVisible }) 
 
   useEffect(() => {
     const fetchSchemas = async () => {
-      await (_localState!.meta as any).schemas.load()
-      const schemas = (_localState!.meta as any).schemas.list()
+      await (_localState.meta as any).schemas.load()
+      const schemas = (_localState.meta as any).schemas.list()
       _localState.setSchemas(schemas)
     }
 
@@ -325,8 +325,8 @@ const CreateFunction: FC<CreateFunctionProps> = ({ func, visible, setVisible }) 
 
         const body = _localState.formState.requestBody
         const response: any = body.id
-          ? await (_localState!.meta as any).functions.update(body.id, body)
-          : await (_localState!.meta as any).functions.create(body)
+          ? await (_localState.meta as any).functions.update(body.id, body)
+          : await (_localState.meta as any).functions.create(body)
 
         if (response.error) {
           ui.setNotification({
@@ -481,15 +481,15 @@ const InputName: FC = observer(({}) => {
       label="Name of function"
       layout="horizontal"
       placeholder="Name of function"
-      value={_localState!.formState.name.value}
+      value={_localState.formState.name.value}
       onChange={(e) =>
-        _localState!.onFormChange({
+        _localState.onFormChange({
           key: 'name',
           value: e.target.value,
         })
       }
       size="small"
-      error={_localState!.formState.name.error}
+      error={_localState.formState.name.error}
       descriptionText="Name will also be used for the function name in postgres"
     />
   )
@@ -503,7 +503,7 @@ const InputMultiArguments: FC<InputMultiArgumentsProps> = observer(({ readonly }
   const _localState = useContext(CreateFunctionContext)
 
   function onAddArgument() {
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'args',
       value: { name: '', type: 'bool' },
       operation: 'add',
@@ -519,10 +519,10 @@ const InputMultiArguments: FC<InputMultiArgumentsProps> = observer(({ readonly }
         </p>
       </div>
       <div className="pt-4 space-y-2">
-        {readonly && isEmpty(_localState!.formState.args.value) && (
+        {readonly && isEmpty(_localState.formState.args.value) && (
           <span className="text-scale-900">No argument for this function</span>
         )}
-        {_localState!.formState.args.value.map(
+        {_localState.formState.args.value.map(
           (x: { name: string; type: string; error?: string }, idx: number) => (
             <InputArgument
               key={`arg-${idx}`}
@@ -558,7 +558,7 @@ const InputArgument: FC<InputArgumentProps> = observer(({ idx, name, type, error
 
   function onNameChange(e: FormEvent<HTMLInputElement>) {
     const _value = e.currentTarget.value
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'args',
       value: { name: _value, type },
       idx,
@@ -568,7 +568,7 @@ const InputArgument: FC<InputArgumentProps> = observer(({ idx, name, type, error
 
   function onTypeChange(e: FormEvent<HTMLSelectElement>) {
     const _value = e.currentTarget.value
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'args',
       value: { name, type: _value },
       idx,
@@ -577,7 +577,7 @@ const InputArgument: FC<InputArgumentProps> = observer(({ idx, name, type, error
   }
 
   function onDelete() {
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'args',
       idx,
       operation: 'delete',
@@ -630,7 +630,7 @@ const InputMultiConfigParams: FC = observer(({}) => {
   const _localState = useContext(CreateFunctionContext)
 
   function onAddArgument() {
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'configParams',
       value: { name: '', value: '' },
       operation: 'add',
@@ -643,7 +643,7 @@ const InputMultiConfigParams: FC = observer(({}) => {
         <h5 className="text-base text-scale-1200">Config Params</h5>
       </div>
       <div className="pt-4 space-y-2">
-        {_localState!.formState.configParams.value.map(
+        {_localState.formState.configParams.value.map(
           (
             x: { name: string; value: string; error?: { name?: string; value?: string } },
             idx: number
@@ -678,7 +678,7 @@ const InputConfigParam: FC<InputConfigParamProps> = observer(({ idx, name, value
 
   function onNameChange(e: FormEvent<HTMLInputElement>) {
     const _value = e.currentTarget.value
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'configParams',
       value: { name: _value, value },
       idx,
@@ -688,7 +688,7 @@ const InputConfigParam: FC<InputConfigParamProps> = observer(({ idx, name, value
 
   function onValueChange(e: FormEvent<HTMLInputElement>) {
     const _value = e.currentTarget.value
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'configParams',
       value: { name, value: _value },
       idx,
@@ -697,7 +697,7 @@ const InputConfigParam: FC<InputConfigParamProps> = observer(({ idx, name, value
   }
 
   function onDelete() {
-    _localState!.onFormArrayChange({
+    _localState.onFormArrayChange({
       key: 'configParams',
       idx,
       operation: 'delete',
@@ -744,7 +744,7 @@ const InputDefinition: FC = observer(({}) => {
       <div className="flex flex-col">
         <h5 className="text-base text-scale-1200">Definition</h5>
         <p className="text-sm text-scale-1100">
-          The language below should be written in `{_localState!.formState.language.value}`.
+          The language below should be written in `{_localState.formState.language.value}`.
         </p>
         <p className="text-sm text-scale-1100">
           Change the language in the Advanced Settings below.
@@ -752,9 +752,9 @@ const InputDefinition: FC = observer(({}) => {
       </div>
       <div className="h-40 border dark:border-dark">
         <SqlEditor
-          defaultValue={_localState!.formState.definition.value}
+          defaultValue={_localState.formState.definition.value}
           onInputChange={(value: string | undefined) => {
-            _localState!.onFormChange({
+            _localState.onFormChange({
               key: 'definition',
               value: value,
             })
@@ -774,9 +774,9 @@ const SelectSchema: FC = observer(({}) => {
       id="schema"
       label="Schema"
       layout="horizontal"
-      value={_localState!.formState.schema.value}
+      value={_localState.formState.schema.value}
       onChange={(e) =>
-        _localState!.onFormChange({
+        _localState.onFormChange({
           key: 'schema',
           value: e.target.value,
         })
@@ -785,7 +785,7 @@ const SelectSchema: FC = observer(({}) => {
       size="small"
       descriptionText="Tables made in the table editor will be in 'public'"
     >
-      {_localState!.schemas.map((x) => (
+      {_localState.schemas.map((x) => (
         <Select.Option key={x.name} value={x.name}>
           {x.name}
         </Select.Option>
@@ -809,9 +809,9 @@ const SelectLanguage: FC = observer(({}) => {
         id="language"
         label="Language"
         layout="horizontal"
-        value={_localState!.formState.language.value}
+        value={_localState.formState.language.value}
         onChange={(e) =>
-          _localState!.onFormChange({
+          _localState.onFormChange({
             key: 'language',
             value: e.target.value,
           })
@@ -846,9 +846,9 @@ const SelectReturnType: FC = observer(({}) => {
         id="returnType"
         label="Return type"
         layout="horizontal"
-        value={_localState!.formState.returnType.value}
+        value={_localState.formState.returnType.value}
         onChange={(e) =>
-          _localState!.onFormChange({
+          _localState.onFormChange({
             key: 'returnType',
             value: e.target.value,
           })
@@ -878,9 +878,9 @@ const SelectBehavior: FC = observer(({}) => {
         id="behavior"
         label="Behavior"
         layout="horizontal"
-        value={_localState!.formState.behavior.value}
+        value={_localState.formState.behavior.value}
         onChange={(e) =>
-          _localState!.onFormChange({
+          _localState.onFormChange({
             key: 'behavior',
             value: e.target.value,
           })
@@ -906,28 +906,28 @@ const RadioSecurity: FC = observer(({}) => {
           label="Type of security"
           layout="vertical"
           onChange={(event) => {
-            _localState!.onFormChange({
+            _localState.onFormChange({
               key: 'securityDefiner',
               value: event.target.value == 'SECURITY_DEFINER',
             })
           }}
           value={
-            _localState!.formState.securityDefiner.value ? 'SECURITY_DEFINER' : 'SECURITY_INVOKER'
+            _localState.formState.securityDefiner.value ? 'SECURITY_DEFINER' : 'SECURITY_INVOKER'
           }
-          error={_localState!.formState.securityDefiner.error}
+          error={_localState.formState.securityDefiner.error}
         >
           <Radio
             id="SECURITY_INVOKER"
             label="SECURITY INVOKER"
             value="SECURITY_INVOKER"
-            checked={!_localState!.formState.securityDefiner.value}
+            checked={!_localState.formState.securityDefiner.value}
             description="Function is to be executed with the privileges of the user that calls it."
           />
           <Radio
             id="SECURITY_DEFINER"
             label="SECURITY DEFINER"
             value="SECURITY_DEFINER"
-            checked={_localState!.formState.securityDefiner.value}
+            checked={_localState.formState.securityDefiner.value}
             description="Function is to be executed with the privileges of the user that created it."
           />
         </Radio.Group>

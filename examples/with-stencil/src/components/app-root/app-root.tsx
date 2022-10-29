@@ -5,7 +5,7 @@
  * @component AppRoot
  */
 
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import { AppState } from '../../store/app.store';
 import { AuthService } from '../../services/auth.service';

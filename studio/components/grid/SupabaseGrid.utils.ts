@@ -109,8 +109,8 @@ export function initTable(
 
   if (typeof props.table === 'string') {
     const fetchMethod = props.editable
-      ? fetchEditableInfo(state.metaService!, props.table, props.schema)
-      : fetchReadOnlyInfo(state.metaService!, props.table, props.schema)
+      ? fetchEditableInfo(state.metaService, props.table, props.schema)
+      : fetchReadOnlyInfo(state.metaService, props.table, props.schema)
 
     fetchMethod.then((res) => {
       if (res) {

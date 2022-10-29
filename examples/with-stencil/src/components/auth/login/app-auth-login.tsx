@@ -4,7 +4,7 @@
  * @component AppLogin
  */
 
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import { AppState } from '../../../store/app.store';
 import { AuthService } from '../../../services/auth.service';

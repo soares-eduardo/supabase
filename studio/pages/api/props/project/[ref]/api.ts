@@ -6,12 +6,11 @@ export default (req: NextApiRequest, res: NextApiResponse) => apiWrapper(req, re
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
 
-  switch (method) {
-    case 'GET':
-      return handleGetAll(req, res)
-    default:
-      res.setHeader('Allow', ['GET'])
-      res.status(405).json({ data: null, error: { message: `Method ${method} Not Allowed` } })
+  if (method == 'GET') {
+    return handleGetAll(req, res)
+  } else {
+    res.setHeader('Allow', ['GET'])
+    res.status(405).json({ data: null, error: { message: `Method ${method} Not Allowed` } })
   }
 }
 

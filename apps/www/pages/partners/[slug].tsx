@@ -224,7 +224,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   let { data: partner } = await supabase
     .from<Partner>('partners')
     .select('*')
-    .eq('slug', params!.slug as string)
+    .eq('slug', params.slug as string)
     .single()
 
   if (!partner) {

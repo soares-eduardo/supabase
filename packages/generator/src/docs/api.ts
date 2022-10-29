@@ -54,7 +54,7 @@ async function gen_v3(
   Object.entries(spec.paths).forEach(([key, val]) => {
     const fullPath = `${apiUrl}${key}`
 
-    toArrayWithKey(val!, 'operation').forEach((o) => {
+    toArrayWithKey(val, 'operation').forEach((o) => {
       const operation = o as v3OperationWithPath
       const enriched = {
         ...operation,
@@ -102,7 +102,7 @@ async function gen_v2(
   Object.entries(spec.paths).forEach(([key, val]) => {
     const fullPath = `${apiUrl}${key}`
 
-    toArrayWithKey(val!, 'operation').forEach((o) => {
+    toArrayWithKey(val, 'operation').forEach((o) => {
       const operation = o as v3OperationWithPath
       const enriched = {
         ...operation,
