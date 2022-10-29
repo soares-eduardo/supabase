@@ -8,7 +8,7 @@ import UserContext from '~/lib/UserContext'
 
 const ChannelsPage = (props) => {
   const router = useRouter()
-  const { user, authLoaded, signOut } = useContext(UserContext)
+  const { user } = useContext(UserContext)
   const messagesEndRef = useRef(null)
 
   // Else load up the page

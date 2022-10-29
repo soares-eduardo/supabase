@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { View, StyleSheet, SafeAreaView, FlatList } from 'react-native'
 import { Styles } from '../lib/constants'
-import { Text } from 'react-native-elements'
 import { supabase } from '../lib/initSupabase'
 import { useUser } from './UserContext'
 
-import { Button, Input, ListItem, CheckBox } from 'react-native-elements'
+import { Text, Button, Input, ListItem, CheckBox } from 'react-native-elements'
 
 /** URL polyfill. Required for Supabase queries to work in React Native. */
 import 'react-native-url-polyfill/auto'
@@ -35,7 +34,7 @@ export default function TodoList() {
     if (error) {
       console.log('error', error)
     } else {
-      setTodos(todos!)
+      setTodos(todos)
     }
   }
 
@@ -45,12 +44,12 @@ export default function TodoList() {
     if (task.length) {
       const { data: todo, error } = await supabase
         .from<Todo>('todos')
-        .insert({ task, user_id: user!.id })
+        .insert({ task, user_id: user.id })
         .single()
       if (error) {
         console.log(error.message)
       } else {
-        setTodos([todo!, ...todos])
+        setTodos([todo, ...todos])
         setNewTaskText('')
       }
     }
@@ -65,7 +64,7 @@ export default function TodoList() {
     if (error) {
       console.log(error)
     } else {
-      setTodos(todos.map((todo) => (todo.id === id ? data! : todo)))
+      setTodos(todos.map((todo) => (todo.id === id ? data : todo)))
     }
   }
 

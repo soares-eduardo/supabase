@@ -22,7 +22,7 @@ export const UserContextProvider = (props: any) => {
     })
 
     return () => {
-      authListener!.unsubscribe()
+      authListener.unsubscribe()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

@@ -48,7 +48,7 @@ export class SupabaseService {
   }
 
   handleNewPassword(newPassword: string) {
-    return this.supabaseClient.auth.api.updateUser(this.token as string, {
+    return this.supabaseClient.auth.api.updateUser(String(this.token), {
       password: newPassword,
     })
   }
