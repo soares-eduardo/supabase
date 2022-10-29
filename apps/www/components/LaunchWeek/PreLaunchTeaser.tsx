@@ -8,12 +8,12 @@ export function PreLaunchTeaser() {
   const authorArray = ['paul_copplestone', 'ant_wilson']
   const author = []
 
-  for (let i = 0; i < authorArray.length; i++) {
+  for (const singleAuthor of authorArray) {
     author.push(
       // @ts-ignore
       authors.find((authors: string) => {
         // @ts-ignore
-        return authors.author_id === authorArray[i]
+        return authors.author_id === singleAuthor
       })
     )
   }

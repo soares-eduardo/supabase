@@ -13,10 +13,10 @@ const BlogListItem = ({ post }: Props) => {
   const author = []
 
   if (authorArray) {
-    for (let i = 0; i < authorArray.length; i++) {
+    for (const singleAuthor of authorArray) {
       author.push(
         authors.find((authors: Author) => {
-          return authors.author_id === authorArray[i]
+          return authors.author_id === singleAuthor
         })
       )
     }

@@ -1,4 +1,3 @@
-import { NewspaperIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import { Article } from '../types'
 

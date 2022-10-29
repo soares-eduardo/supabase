@@ -1,7 +1,5 @@
-import { Button, Badge, IconArrowRight } from '@supabase/ui'
-import SectionHeader from 'components/UI/SectionHeader'
+import { Badge } from '@supabase/ui'
 import Solutions from 'data/Solutions.json'
-import Link from 'next/link'
 import SectionContainer from '../Layouts/SectionContainer'
 import ProductIcon from '../ProductIcon'
 import TextLink from '../TextLink'

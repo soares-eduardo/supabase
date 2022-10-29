@@ -1,8 +1,7 @@
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import Link from 'next/link'
-interface iImages {
+interface IImage {
   name: string
   image: string
   alt?: string
@@ -12,8 +11,8 @@ interface iImages {
 type colSizes = 8 | 6 | 4 | 3
 type paddingSizes = 6 | 8 | 12
 
-interface iImageGrid {
-  images: iImages[]
+interface IImageGrid {
+  images: IImage[]
   smCols?: colSizes
   mdCols?: colSizes
   lgCols?: colSizes
