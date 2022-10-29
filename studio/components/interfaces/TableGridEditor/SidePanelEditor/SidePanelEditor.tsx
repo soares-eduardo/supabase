@@ -66,7 +66,7 @@ const SidePanelEditor: FC<Props> = ({
     let saveRowError = false
     if (isNewRecord) {
       const insertQuery = new Query()
-        .from(selectedTable!.name, selectedTable!.schema)
+        .from(selectedTable.name, selectedTable.schema)
         .insert([payload], { returning: true })
         .toSql()
 
@@ -80,9 +80,9 @@ const SidePanelEditor: FC<Props> = ({
     } else {
       const hasChanges = !isEmpty(payload)
       if (hasChanges) {
-        if (selectedTable!.primary_keys.length > 0) {
+        if (selectedTable.primary_keys.length > 0) {
           const updateQuery = new Query()
-            .from(selectedTable!.name, selectedTable!.schema)
+            .from(selectedTable.name, selectedTable.schema)
             .update(payload, { returning: true })
             .match(configuration.identifiers)
             .toSql()
@@ -131,7 +131,7 @@ const SidePanelEditor: FC<Props> = ({
     if (response?.error) {
       ui.setNotification({ category: 'error', message: response.error.message })
     } else {
-      await meta.tables.loadById(selectedTable!.id)
+      await meta.tables.loadById(selectedTable.id)
       onColumnSaved()
       setIsEdited(false)
       closePanel()

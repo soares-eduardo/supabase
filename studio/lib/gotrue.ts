@@ -10,7 +10,7 @@ export const auth = new GoTrueClient({
   storageKey: STORAGE_KEY,
 })
 
-export const getAuthUser = async (token: String): Promise<any> => {
+export const getAuthUser = async (token: string): Promise<any> => {
   try {
     const {
       data: { user },
@@ -25,7 +25,7 @@ export const getAuthUser = async (token: String): Promise<any> => {
   }
 }
 
-export const getAuth0Id = (provider: String, providerId: String): String => {
+export const getAuth0Id = (provider: string, providerId: string): string => {
   return `${provider}|${providerId}`
 }
 

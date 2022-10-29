@@ -220,6 +220,6 @@ function readIdents(iterator, maxlvl) {
 }
 
 function formatInsertText(value) {
-  const hasUpperCase = !(value == value.toLowerCase())
+  const hasUpperCase = (value == value.toLowerCase())
   return hasUpperCase ? `"${value}"` : value
 }

@@ -22,10 +22,9 @@ import {
 import { PostgresSchema, PostgresTable } from '@supabase/postgres-meta'
 
 import Base64 from 'lib/base64'
-import { checkPermissions, useStore } from 'hooks'
+import { useStore } from 'hooks'
 import { SchemaView } from './TableEditorLayout.types'
 import ProductMenuItem from 'components/ui/ProductMenu/ProductMenuItem'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
 
 interface Props {
   selectedSchema?: string

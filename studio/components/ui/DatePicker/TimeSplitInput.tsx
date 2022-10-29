@@ -3,7 +3,7 @@ import { IconClock } from '@supabase/ui'
 
 import { format } from 'date-fns'
 
-import { TimeType, Time, TimeSplitInputProps } from './DatePicker.types'
+import { TimeType, TimeSplitInputProps } from './DatePicker.types'
 
 const TimeSplitInput = ({
   type,

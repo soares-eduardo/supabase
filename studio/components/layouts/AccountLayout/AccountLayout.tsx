@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite'
 
 import { auth } from 'lib/gotrue'
 import { useStore, withAuth, useFlag } from 'hooks'
-import { API_URL, IS_PLATFORM } from 'lib/constants'
+import { IS_PLATFORM } from 'lib/constants'
 import WithSidebar from './WithSidebar'
 import { SidebarSection } from './AccountLayout.types'
 

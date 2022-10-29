@@ -1,11 +1,7 @@
 import { Input } from '@supabase/ui'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 
 const AutoTextArea = (props) => {
-  const textAreaRef = useRef(null)
-  const [text, setText] = useState('')
-  const [textAreaHeight, setTextAreaHeight] = useState('auto')
-  const [parentHeight, setParentHeight] = useState('auto')
 
   // useEffect(() => {
   //   setParentHeight(`${textAreaRef?.current.scrollHeight}px`)

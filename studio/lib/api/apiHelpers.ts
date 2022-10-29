@@ -144,7 +144,7 @@ export const createEncryptedDbConnectionString = ({
   db_user_supabase: string
   db_host: string
   db_pass_supabase: string
-  db_dns_name?: String
+  db_dns_name?: string
   db_port: number
   db_name: string
   db_ssl: boolean

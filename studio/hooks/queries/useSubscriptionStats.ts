@@ -1,4 +1,4 @@
-import useSWR, { mutate } from 'swr'
+import useSWR from 'swr'
 import { get } from 'lib/common/fetch'
 import { API_URL } from 'lib/constants'
 

@@ -76,7 +76,7 @@ const TabWelcome = observer(() => {
 export default TabWelcome
 
 const SqlCard = ({ title, description, sql, onClick }) => {
-  const [loading, setLoading] = useState(false)
+  const [setLoading] = useState(false)
 
   function handleOnClick() {
     setLoading(true)

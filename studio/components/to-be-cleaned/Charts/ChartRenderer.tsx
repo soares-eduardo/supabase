@@ -8,7 +8,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ReferenceLine,
   Cell,
   ResponsiveContainer,
 } from 'recharts'
@@ -201,7 +200,7 @@ export function BarChart({
     tiny: 76,
     small: 96,
     normal: 160,
-  }[chartSize as string] as number
+  }Number([String(chartSize)])
 
   return (
     <Loading active={!data}>

@@ -7,7 +7,6 @@ import {
   IconAlertCircle,
   IconBarChart,
   IconLoader,
-  Typography,
 } from '@supabase/ui'
 import { Dictionary } from 'components/grid'
 

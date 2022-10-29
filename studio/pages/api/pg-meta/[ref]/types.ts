@@ -10,12 +10,11 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
 
-  switch (method) {
-    case 'GET':
-      return handleGetAll(req, res)
-    default:
-      res.setHeader('Allow', ['GET'])
-      res.status(405).json({ error: { message: `Method ${method} Not Allowed` } })
+  if (method == 'GET') {
+    return handleGetAll(req, res)
+  } else {
+    res.setHeader('Allow', ['GET'])
+    res.status(405).json({ error: { message: `Method ${method} Not Allowed` } })
   }
 }
 

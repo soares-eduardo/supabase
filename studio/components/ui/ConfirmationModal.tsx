@@ -1,6 +1,5 @@
-import { Modal, Button, Space } from '@supabase/ui'
-import { MouseEventHandler } from 'react'
-import { FC, useState, useEffect } from 'react'
+import { Modal, Button } from '@supabase/ui'
+import { FC, useState, useEffect, MouseEventHandler } from 'react'
 
 interface Props {
   visible: boolean

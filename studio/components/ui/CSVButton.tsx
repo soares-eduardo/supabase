@@ -1,6 +1,5 @@
 import { Button, IconDownloadCloud } from '@supabase/ui'
 import { ButtonProps } from '@supabase/ui/dist/cjs/components/Button/Button'
-import { flattenDeep } from 'lodash'
 import React, { useMemo, useRef } from 'react'
 import { CSVLink } from 'react-csv'
 
@@ -29,11 +28,11 @@ const CSVButton: React.FC<Props> = ({
   const formattedData = useMemo(() => {
     const first = data?.[0]
     if (!first || !data) return
-    const keys = Object.keys(first as any)
+    const keys = Object.keys(first)
     return data.map((datum: any) => {
       return keys.reduce((acc: any, key) => {
         if (typeof datum[key] === 'object') {
-          acc[key] = JSON.stringify(datum[key]) as string
+          acc[key] = JSON.stringify(datum[key])
         } else {
           acc[key] = String(datum[key])
         }

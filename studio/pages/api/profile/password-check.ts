@@ -7,12 +7,11 @@ export default (req: NextApiRequest, res: NextApiResponse) => apiWrapper(req, re
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
 
-  switch (method) {
-    case 'POST':
-      return handlePost(req, res)
-    default:
-      res.setHeader('Allow', ['POST'])
-      res.status(405).json({ data: null, error: { message: `Method ${method} Not Allowed` } })
+  if (method == 'POST') {
+    return handlePost(req, res)
+  } else {
+    res.setHeader('Allow', ['POST'])
+    res.status(405).json({ data: null, error: { message: `Method ${method} Not Allowed` } })
   }
 }
 

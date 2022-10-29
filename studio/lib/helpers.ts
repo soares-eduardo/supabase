@@ -17,6 +17,7 @@ export const minifyJSON = (prettifiedJSON: string) => {
     if (!isNaN(Number(res))) return Number(res)
     else return res
   } catch (err) {
+    console.log(err);
     throw err
   }
 }

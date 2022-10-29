@@ -82,7 +82,7 @@ const TableEditor: FC<Props> = ({
         setTableFields(tableFields)
       } else {
         const tableFields = generateTableFieldFromPostgresTable(
-          table!,
+          table,
           isDuplicating,
           isRealtimeEnabled
         )

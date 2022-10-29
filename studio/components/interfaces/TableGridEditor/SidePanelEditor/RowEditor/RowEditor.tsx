@@ -134,9 +134,9 @@ const RowEditor: FC<Props> = ({
       if (!isNewRecord) {
         const primaryKeyColumns = rowFields.filter((field) => field.isPrimaryKey)
         const identifiers = {} as Dictionary<any>
-        primaryKeyColumns.forEach((column) => (identifiers[column.name] = row![column.name]))
+        primaryKeyColumns.forEach((column) => (identifiers[column.name] = row[column.name]))
         configuration.identifiers = identifiers
-        configuration.rowIdx = row!.idx
+        configuration.rowIdx = row.idx
       }
 
       saveChanges(payload, isNewRecord, configuration, () => setLoading(false))
