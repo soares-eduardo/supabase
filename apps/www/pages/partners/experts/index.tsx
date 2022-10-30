@@ -32,9 +32,9 @@ interface Props {
 function ExpertPartnersPage(props: Props) {
   const { partners } = props
   const partnersByCategory: { [category: string]: Partner[] } = {}
-  partners.map(
-    (p) => (partnersByCategory[p.category] = [...(partnersByCategory[p.category] ?? []), p])
-  )
+
+  partners.forEach(p => (partnersByCategory[p.category] = [...(partnersByCategory[p.category] ?? []), p]))
+
   const router = useRouter()
 
   const meta_title = 'Find an expert'

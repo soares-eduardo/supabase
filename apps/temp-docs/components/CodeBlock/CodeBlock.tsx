@@ -50,7 +50,7 @@ function CodeBlock(props: Props) {
         customStyle={{
           padding: 0,
           fontSize: large ? 18 : 12,
-          lineHeight: large ? 1.2 : 1.2,
+          lineHeight: 1.2,
           borderTop: '1px solid #393939',
           background: '#181818',
         }}

@@ -24,7 +24,7 @@ const serviceToken = `
 }
 `.trim()
 
-export default function JwtGenerator({}) {
+export default function JwtGenerator() {
   const [jwtSecret, setJwtSecret] = useState(
     'your-super-secret-jwt-secret-with-at-least-32-characters-long'
   )
