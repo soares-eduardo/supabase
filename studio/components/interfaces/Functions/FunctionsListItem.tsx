@@ -29,10 +29,6 @@ const FunctionsListItem: FC<Props> = ({ function: item }) => {
         </div>
       </Table.td>
       <Table.td className="">
-        {/* <span className="text-sm text-scale-1100 flex items-center gap-1">
-          <IconGlobe size={14} />
-          HTTP Request
-        </span> */}
         <div className="text-xs text-scale-900 flex gap-2 items-center truncate">
           <span className="font-mono truncate hidden md:inline">{`https://${ref}.functions.supabase.co/${item.slug}`}</span>
           <span className="font-mono truncate md:hidden">{`/${item.name}`}</span>
