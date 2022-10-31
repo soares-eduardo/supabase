@@ -10,7 +10,7 @@ import { SQL_TEMPLATES } from '../SQLEditor.constants'
 
 interface Props {}
 
-const SQLTemplates: FC<Props> = ({}) => {
+const SQLTemplates: FC<Props> = () => {
   const [templates, quickstarts] = partition(SQL_TEMPLATES, { type: 'template' })
   const { ui } = useStore()
   const projectRef = ui.selectedProject?.ref

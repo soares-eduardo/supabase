@@ -16,7 +16,7 @@ import {
 
 interface Props {}
 
-const General: FC<Props> = ({}) => {
+const General: FC<Props> = () => {
   const { app, ui } = useStore()
   const project = ui.selectedProject
 

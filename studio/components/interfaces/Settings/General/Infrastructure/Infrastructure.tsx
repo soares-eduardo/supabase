@@ -16,7 +16,7 @@ import RestartServerButton from './RestartServerButton'
 
 interface Props {}
 
-const Infrastructure: FC<Props> = ({}) => {
+const Infrastructure: FC<Props> = () => {
   const { ui } = useStore()
   const isProjectPauseEnabled = useFlag('projectPausing')
 

@@ -7,7 +7,7 @@ import Table from 'components/to-be-cleaned/Table'
 import UserListItem from './UsersListItem'
 import UsersPagination from './UsersPagination'
 
-const UsersList = ({}) => {
+const UsersList = () => {
   const PageState: any = useContext(PageContext)
 
   return (
