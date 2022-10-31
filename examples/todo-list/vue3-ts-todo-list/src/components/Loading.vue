@@ -17,8 +17,6 @@ export default {
   height: 2.5em;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: load7 1.8s infinite ease-in-out;
-  animation: load7 1.8s infinite ease-in-out;
 }
 .loader {
   color: #0e0e0e;

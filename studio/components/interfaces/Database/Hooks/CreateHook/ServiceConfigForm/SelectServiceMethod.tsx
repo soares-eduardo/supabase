@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { Select } from '@supabase/ui'
 import { CreateHookContext } from '../'
 
-const SelectServiceMethod: FC = observer(({}) => {
+const SelectServiceMethod: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <Select

@@ -34,7 +34,9 @@ const ProviderForm: FC<Props> = ({ provider }) => {
     const payload = { ...values }
 
     // When the key is a 'double negative' key, we must reverse the boolean before the payload can be sent
-    Object.keys(values).map((x: string) => {
+    
+
+    Object.keys(values).forEach(x => {
       if (doubleNegativeKeys.includes(x)) {
         payload[x] = !values[x]
       }

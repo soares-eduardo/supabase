@@ -17,17 +17,6 @@ async function login() {
     return res
   } catch (error) {
     console.error({ error })
-    if (error.response === undefined) {
-      // No response from server
-    } else {
-      // Here you can further process the response ..
-    }
-
-    if (error.status === undefined) {
-      // No HTTP status code
-    } else {
-      // Further processing ..
-    }
   }
   return null
 }

@@ -294,7 +294,7 @@ type CreateFunctionProps = {
   func: any
   visible: boolean
   setVisible: (value: boolean) => void
-} & any
+}
 
 const CreateFunction: FC<CreateFunctionProps> = ({ func, visible, setVisible }) => {
   const { ui, meta } = useStore()
@@ -473,7 +473,7 @@ const CreateFunction: FC<CreateFunctionProps> = ({ func, visible, setVisible }) 
 
 export default observer(CreateFunction)
 
-const InputName: FC = observer(({}) => {
+const InputName: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
   return (
     <Input
@@ -626,7 +626,7 @@ const InputArgument: FC<InputArgumentProps> = observer(({ idx, name, type, error
   )
 })
 
-const InputMultiConfigParams: FC = observer(({}) => {
+const InputMultiConfigParams: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
 
   function onAddArgument() {
@@ -737,7 +737,7 @@ const InputConfigParam: FC<InputConfigParamProps> = observer(({ idx, name, value
   )
 })
 
-const InputDefinition: FC = observer(({}) => {
+const InputDefinition: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
   return (
     <div className="space-y-4">
@@ -766,7 +766,7 @@ const InputDefinition: FC = observer(({}) => {
   )
 })
 
-const SelectSchema: FC = observer(({}) => {
+const SelectSchema: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
 
   return (
@@ -794,7 +794,7 @@ const SelectSchema: FC = observer(({}) => {
   )
 })
 
-const SelectLanguage: FC = observer(({}) => {
+const SelectLanguage: FC = observer(() => {
   const { meta } = useStore()
   const _localState = useContext(CreateFunctionContext)
 
@@ -837,7 +837,7 @@ const SelectLanguage: FC = observer(({}) => {
   )
 })
 
-const SelectReturnType: FC = observer(({}) => {
+const SelectReturnType: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
 
   return (
@@ -869,7 +869,7 @@ const SelectReturnType: FC = observer(({}) => {
   )
 })
 
-const SelectBehavior: FC = observer(({}) => {
+const SelectBehavior: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
 
   return (
@@ -895,7 +895,7 @@ const SelectBehavior: FC = observer(({}) => {
   )
 })
 
-const RadioSecurity: FC = observer(({}) => {
+const RadioSecurity: FC = observer(() => {
   const _localState = useContext(CreateFunctionContext)
 
   return (

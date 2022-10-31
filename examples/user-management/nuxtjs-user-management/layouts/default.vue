@@ -94,7 +94,6 @@ button,
   border-radius: var(--custom-border-radius);
   padding: 0.5rem 1rem;
   cursor: pointer;
-  text-align: center;
   font-size: 0.9rem;
   text-transform: uppercase;
 }

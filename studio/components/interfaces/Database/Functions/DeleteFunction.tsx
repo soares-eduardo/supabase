@@ -7,7 +7,7 @@ type DeleteFunctionProps = {
   func?: any
   visible: boolean
   setVisible: (value: boolean) => void
-} & any
+}
 
 const DeleteFunction: FC<DeleteFunctionProps> = ({ func, visible, setVisible }) => {
   const { ui, meta } = useStore()

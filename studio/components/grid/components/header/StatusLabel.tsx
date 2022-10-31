@@ -5,7 +5,7 @@ import { SupabaseGridQueue } from '../../constants'
 
 interface Props {}
 
-const StatusLabel: FC<Props> = ({}) => {
+const StatusLabel: FC<Props> = () => {
   const [status, setStatus] = useState<string>()
 
   useEffect(() => {
