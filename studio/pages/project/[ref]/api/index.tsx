@@ -71,7 +71,7 @@ export default observer(PageConfig)
 
 const DEFAULT_KEY = { name: 'hide', key: 'SUPABASE_KEY' }
 
-const DocView: FC<any> = observer(({}) => {
+const DocView: FC<any> = observer(() => {
   const PageState: any = useContext(PageContext)
   const router = useRouter()
   const [selectedLang, setSelectedLang] = useState<any>('js')

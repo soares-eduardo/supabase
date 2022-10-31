@@ -12,7 +12,7 @@ import NavigationIconButton from './NavigationIconButton'
 
 interface Props {}
 
-const NavigationBar: FC<Props> = ({}) => {
+const NavigationBar: FC<Props> = () => {
   const router = useRouter()
   const { ui } = useStore()
   const projectRef = ui.selectedProjectRef as string

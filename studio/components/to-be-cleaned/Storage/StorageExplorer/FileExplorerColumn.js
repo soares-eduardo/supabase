@@ -136,7 +136,7 @@ const FileExplorerColumn = ({
             ? 'w-full'
             : 'w-64 border-r border-panel-border-light dark:border-panel-border-dark'
         }
-        ${view === STORAGE_VIEWS.COLUMNS ? '' : ''}
+        ${''}
         relative flex-shrink-0 overflow-auto flex flex-col hide-scrollbar
       `}
       onContextMenu={displayMenu}

@@ -62,32 +62,6 @@ const PolicyRow = ({
       </Panel.Content>
     </div>
   )
-  return (
-    <div className="grid grid-cols-10 p-4 px-6 group">
-      <div className="col-span-4">
-        <Typography.Text>{name}</Typography.Text>
-      </div>
-      <div className="col-span-4 flex flex-col">
-        <div>
-          <Badge color="green">{command}</Badge>
-        </div>
-      </div>
-      <div className="col-span-2 flex items-center justify-end opacity-0 transition group-hover:opacity-100">
-        <div name="flex">
-          <Button
-            type="outline"
-            className="mr-2"
-            onClick={() => onSelectPolicyEdit(policy, bucketName, table)}
-          >
-            Edit
-          </Button>
-          <Button type="outline" onClick={() => onSelectPolicyDelete(policy)}>
-            Delete
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 const StoragePoliciesBucketRow = ({

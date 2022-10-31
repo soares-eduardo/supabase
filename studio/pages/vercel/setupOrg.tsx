@@ -73,7 +73,7 @@ function SetupOrg() {
 }
 export default observer(SetupOrg)
 
-const CreateOrganization = observer(({}) => {
+const CreateOrganization = observer(() => {
   const PageState: any = useContext(PageContext)
   const router = useRouter()
 
@@ -136,7 +136,7 @@ const CreateOrganization = observer(({}) => {
   )
 })
 
-const OrgSelection = observer(({}) => {
+const OrgSelection = observer(() => {
   const PageState: any = useContext(PageContext)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
