@@ -4,7 +4,7 @@ import { Checkbox } from '@supabase/ui'
 import { union, without } from 'lodash'
 import { CreateHookContext } from './'
 
-const CheckboxEvents: FC = observer(({}) => {
+const CheckboxEvents: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     // @ts-ignore

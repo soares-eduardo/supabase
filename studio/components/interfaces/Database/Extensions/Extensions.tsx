@@ -10,7 +10,7 @@ import NoSearchResults from 'components/to-be-cleaned/NoSearchResults'
 
 interface Props {}
 
-const Extensions: FC<Props> = ({}) => {
+const Extensions: FC<Props> = () => {
   const { meta } = useStore()
   const [filterString, setFilterString] = useState<string>('')
 

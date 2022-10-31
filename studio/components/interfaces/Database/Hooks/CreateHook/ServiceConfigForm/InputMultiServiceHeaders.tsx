@@ -5,7 +5,7 @@ import { Typography, Button, IconPlus } from '@supabase/ui'
 import { CreateHookContext } from '../'
 import InputServiceHeader from './InputServiceHeader'
 
-const InputMultiServiceHeaders: FC = observer(({}) => {
+const InputMultiServiceHeaders: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
 
   function onAddArgument() {

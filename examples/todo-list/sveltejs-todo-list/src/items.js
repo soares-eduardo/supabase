@@ -40,7 +40,7 @@ export const itemsAllAtOnce = async () => {
 
 export const items = () => {
   try {
-    return itemsAllAtOnce()
+    return await itemsAllAtOnce()
   } catch (err) {
     console.error(err)
     return []

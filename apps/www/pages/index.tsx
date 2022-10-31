@@ -15,7 +15,7 @@ import 'swiper/swiper.min.css'
 
 type Props = {}
 
-const Index = ({}: Props) => {
+const Index = () => {
   return (
     <>
       <Layout>

@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { Alert, Button } from '@supabase/ui'
 import { CreateHookContext } from '../'
 
-const ServiceUnavailableBox: FC = observer(({}) => {
+const ServiceUnavailableBox: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <Alert variant="warning" title="Service under development" withIcon>

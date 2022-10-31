@@ -7,7 +7,7 @@ type DeleteHookProps = {
   hook?: any
   visible: boolean
   setVisible: (value: boolean) => void
-} & any
+}
 
 const DeleteHook: React.FC<DeleteHookProps> = ({ hook, visible, setVisible }) => {
   const { ui, meta } = useStore()

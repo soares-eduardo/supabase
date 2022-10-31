@@ -36,8 +36,7 @@ function generateColorClasses() {
 
   let mappedColors = {}
 
-  // generate the shape of the colors object
-  colors.map((x) => {
+  colors.forEach(x => {
     // create empty obj for each color
     mappedColors[x] = {}
     // create empty obj for each fixed color
@@ -50,7 +49,7 @@ function generateColorClasses() {
     }
   })
 
-  colors.map((x) => {
+  colors.forEach(x => {
     for (let index = 0; index < 12; index++) {
       const step = index + 1
       mappedColors[x][step * 100] = `var(--colors-${x.toLowerCase()}${step})`

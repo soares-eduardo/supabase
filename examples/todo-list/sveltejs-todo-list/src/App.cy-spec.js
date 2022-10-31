@@ -4,7 +4,7 @@ import App from './App.svelte'
 /* global cy */
 describe(App.name, () => {
   it('can test', () => {
-    assert(true === true)
+    assert(true)
   })
   it('can be instantiated', () => {
     return new App({

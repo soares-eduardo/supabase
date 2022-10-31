@@ -5,7 +5,7 @@ import { CreateHookContext } from '../'
 
 // Not used currently
 
-const InputServiceTimeout: FC = observer(({}) => {
+const InputServiceTimeout: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <Input

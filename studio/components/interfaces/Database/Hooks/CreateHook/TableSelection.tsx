@@ -7,7 +7,7 @@ import { Input, Typography, Listbox } from '@supabase/ui'
 import { CreateHookContext } from './'
 import { useStore } from 'hooks'
 
-const TableSelection: FC = observer(({}) => {
+const TableSelection: FC = observer(() => {
   const { ui } = useStore()
   const projectRef = ui.selectedProject?.ref
   const _localState: any = useContext(CreateHookContext)

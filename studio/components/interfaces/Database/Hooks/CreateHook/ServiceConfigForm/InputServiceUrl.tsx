@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { Input } from '@supabase/ui'
 import { CreateHookContext } from '../'
 
-const InputServiceUrl: FC = observer(({}) => {
+const InputServiceUrl: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <Input

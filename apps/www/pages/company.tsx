@@ -20,7 +20,7 @@ import { NextSeo } from 'next-seo'
 
 type Props = {}
 
-const Index = ({}: Props) => {
+const Index = () => {
   const router = useRouter()
 
   const meta_title = "One of the world's fastest-growing open source communities | Supabase"

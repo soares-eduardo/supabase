@@ -6,7 +6,7 @@ import { CreateHookContext } from '../'
 import RadioHookService from './RadioHookService'
 import { hookServiceOptions } from './RadioGroupHookService.constants'
 
-const RadioGroupHookService: FC = observer(({}) => {
+const RadioGroupHookService: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <>

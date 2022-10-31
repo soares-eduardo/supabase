@@ -145,12 +145,11 @@ export const getAllCategories = (directory: Directories) => {
   const posts = getSortedPosts(directory)
   let categories: any = []
 
-  posts.map((post: any) => {
-    // add tags into categories array
+  posts.forEach(post => {
     post.tags.map((tag: string) => {
       if (!categories.includes(tag)) return categories.push(tag)
     })
-  })
+  });
 
   return categories
 }

@@ -9,7 +9,7 @@ export const ROW_CONTEXT_MENU_ID = 'row-context-menu-id'
 
 type RowContextMenuProps = {}
 
-const RowContextMenu: React.FC<RowContextMenuProps> = ({}) => {
+const RowContextMenu: React.FC<RowContextMenuProps> = () => {
   const state = useTrackedState()
   const dispatch = useDispatch()
 

@@ -5,7 +5,7 @@ import { Typography, Button, IconPlus } from '@supabase/ui'
 import { CreateHookContext } from '../'
 import InputServiceParam from './InputServiceParam'
 
-const InputMultiServiceParams: FC = observer(({}) => {
+const InputMultiServiceParams: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
 
   function onAddArgument() {

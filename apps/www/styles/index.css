@@ -172,7 +172,6 @@ h6 { */
 .sbui-tabs--alt div[role='tablist'] .sbui-btn-text {
   @apply dark:text-gray-400;
   font-weight: 400;
-  shadow: none;
 }
 
 .sbui-tabs--underline-alt div[role='tablist'] .sbui-tab-button-underline--active {

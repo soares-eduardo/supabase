@@ -7,7 +7,7 @@ type DeleteTriggerProps = {
   trigger?: any
   visible: boolean
   setVisible: (value: boolean) => void
-} & any
+}
 
 const DeleteTrigger: FC<DeleteTriggerProps> = ({ store, trigger, visible, setVisible }) => {
   const { ui, meta } = useStore()

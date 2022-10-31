@@ -12,7 +12,7 @@ import BackupsEmpty from './BackupsEmpty'
 
 interface Props {}
 
-const BackupsList: FC<Props> = ({}) => {
+const BackupsList: FC<Props> = () => {
   const { ui, backups } = useStore()
   const projectRef = ui.selectedProject?.ref || 'default'
 
