@@ -4,7 +4,7 @@ import GetStartedPanel from './GetStartedPanel'
 
 interface Props {}
 
-const NewProjectPanel: FC<Props> = ({}) => (
+const NewProjectPanel: FC<Props> = () => (
   <div className="grid grid-cols-12 gap-8 mx-6">
     <div className="col-span-12">
       <GetStartedPanel />

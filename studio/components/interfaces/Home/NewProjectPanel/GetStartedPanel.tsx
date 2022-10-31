@@ -6,7 +6,7 @@ import Panel from 'components/ui/Panel'
 
 interface Props {}
 
-const GetStartedPanel: FC<Props> = ({}) => {
+const GetStartedPanel: FC<Props> = () => {
   const router = useRouter()
   const { ref } = router.query
   return (

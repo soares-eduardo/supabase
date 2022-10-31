@@ -80,7 +80,7 @@ const ChooseFunctionForm: React.FC<ChooseFunctionFormProps> = ({
 
 export default observer(ChooseFunctionForm)
 
-const NoticeBox: React.FC = ({}) => {
+const NoticeBox: React.FC = () => {
   const router = useRouter()
   const { ref } = router.query
   return (
@@ -104,7 +104,7 @@ const NoticeBox: React.FC = ({}) => {
   )
 }
 
-const NoFunctionsState: React.FC = ({}) => {
+const NoFunctionsState: React.FC = () => {
   // for the empty 'no tables' state link
   const router = useRouter()
   const { ref } = router.query
