@@ -51,6 +51,9 @@ const FunctionsListItem: FC<Props> = ({ function: item }) => {
       <Table.td className="hidden 2xl:table-cell">
         <span className="text-scale-1100">v{item.version}</span>
       </Table.td>
+      <Table.td className="hidden 2xl:table-cell">
+        <span className="text-scale-1100">v{item.postgreSQL_version}</span>
+      </Table.td>
       <Table.td className="2xl:table-cell text-right">
         <span className="text-scale-1100">{item.status}</span>
       </Table.td>

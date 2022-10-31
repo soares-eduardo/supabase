@@ -27,6 +27,7 @@ const FunctionsList = ({ functions }: { functions: Function[] }) => {
                 <Table.th className="hidden lg:table-cell">Created</Table.th>
                 <Table.th className="hidden 2xl:table-cell">Last updated</Table.th>
                 <Table.th className="hidden 2xl:table-cell">Version</Table.th>
+                <Table.th className="hidden 2xl:table-cell">PostgreSQL</Table.th>
                 <Table.th className="text-right">Status</Table.th>
               </>
             }
