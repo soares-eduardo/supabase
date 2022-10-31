@@ -40,7 +40,7 @@ function ToggleField({
       {label && <label htmlFor={id}>{label}</label>}
       <div className="form-control flex items-center">
         <Toggle onChange={disabled ? undefined : onToggle} checked={enabled} />
-        {addOns && addOns}
+        {addOns}
       </div>
       {help && <span className="form-text text-muted">{help}</span>}
     </div>

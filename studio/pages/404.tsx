@@ -6,7 +6,7 @@ import { Button } from '@supabase/ui'
 
 import { useStore } from 'hooks'
 
-const Error404: NextPage = ({}) => {
+const Error404: NextPage = () => {
   const { ui } = useStore()
   const { theme } = ui
 

@@ -62,7 +62,7 @@ const WithSidebar: FC<Props> = ({
               </div>
             </div>
           )}
-          {header && header}
+          {header}
           <div className="-mt-1">
             <Menu>
               {customSidebarContent}

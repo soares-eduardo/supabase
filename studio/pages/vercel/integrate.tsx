@@ -180,8 +180,8 @@ class VercelIntegrationStore implements IVercelIntegrationStore {
 }
 const PageContext = createContext<IVercelIntegrationStore>(undefined!)
 
-type VercelIntegrationProps = {} & any
-const VercelIntegration: FC<VercelIntegrationProps> = ({}) => {
+type VercelIntegrationProps = any
+const VercelIntegration: FC<VercelIntegrationProps> = () => {
   // @ts-ignore
   const _store: IVercelIntegrationStore = useLocalObservable(() => new VercelIntegrationStore())
   const { app } = useStore()

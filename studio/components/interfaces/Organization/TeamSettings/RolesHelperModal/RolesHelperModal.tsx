@@ -4,7 +4,7 @@ import { PERMISSIONS_MAPPING } from './RolesHelperModal.constants'
 
 interface Props {}
 
-const RolesHelperModal: FC<Props> = ({}) => {
+const RolesHelperModal: FC<Props> = () => {
   const [showModal, setShowModal] = useState(false)
   return (
     <>

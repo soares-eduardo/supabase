@@ -10,7 +10,7 @@ describe.each(Object.values(LogsTableName))('%s', (table) => {
     if (typeof templates[key] === 'string' && key.split('.').length === 2) {
       return true
     } else {
-      false
+      return false
     }
   })
   const [root, child] = (stringTemplateKey || '').split('.')

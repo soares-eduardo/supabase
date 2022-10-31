@@ -6,7 +6,7 @@ import { observer } from 'mobx-react-lite'
 
 import { useStore } from 'hooks'
 
-const Error500: NextPage = ({}) => {
+const Error500: NextPage = () => {
   const { ui } = useStore()
   const { theme } = ui
 

@@ -9,7 +9,7 @@ import InputMultiServiceHeaders from './InputMultiServiceHeaders'
 import InputMultiServiceParams from './InputMultiServiceParams'
 import ServiceUnavailableBox from './ServiceUnavailableBox'
 
-const ServiceConfigForm: FC = observer(({}) => {
+const ServiceConfigForm: FC = observer(() => {
   const _localState: any = useContext(CreateHookContext)
   return (
     <>

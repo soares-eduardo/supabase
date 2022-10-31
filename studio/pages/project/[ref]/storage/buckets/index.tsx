@@ -14,7 +14,7 @@ import { NextPageWithLayout } from 'types'
 /**
  * PageLayout is used to setup layout - as usual it will requires inject global store
  */
-const PageLayout: NextPageWithLayout = ({}) => {
+const PageLayout: NextPageWithLayout = () => {
   const router = useRouter()
   const { ref } = router.query
 
