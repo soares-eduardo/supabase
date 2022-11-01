@@ -9,7 +9,12 @@ import TabItem from '@theme/TabItem'
 
 To enable Twitter Auth for your project, you need to set up a Twitter OAuth application and add the application credentials to your Supabase Dashboard.
 
+OAuth 2.0 is not required!
+
 ## Overview
+
+First of all, you need an "elevated access" to be able to access e-mail adresses. To have this elevated access you need to submit a brief description of the 
+project to Twitter and wait for them to review it.
 
 Setting up Twitter logins for your application consists of 3 parts:
 
@@ -59,7 +64,7 @@ The next step requires a callback URL, which looks like this:
 - At the bottom, under `Next, setup your App` click the link `enable 3rd party authentication`.
 - Under `App Settings`, click on the gear icon next to your app name to go to `App Settings`.
 - At the bottom, next to `Authentication settings`, click `Edit`.
-- Turn `Enable 3-legged OAuth` ON.
+
 - Turn `Request email address from users` ON.
 - Enter your `Callback URL`.
 - Enter your `Website URL`.
