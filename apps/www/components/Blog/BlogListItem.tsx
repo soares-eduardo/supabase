@@ -1,5 +1,6 @@
 import authors from 'lib/authors.json'
 import Image from 'next/image'
+import path from 'path'
 import React from 'react'
 import Author from '~/types/author'
 import PostTypes from '~/types/post'
@@ -22,6 +23,18 @@ const BlogListItem = ({ post }: Props) => {
     }
   }
 
+  function getPostImageThumb(post: PostTypes) {
+    if (!post.thumb) {
+      return '/images/blog/blog-placeholder.png'
+    }
+
+    if (post.type === 'casestudy') {
+      return post.thumb
+    }
+
+    return `/images/blog/${post.thumb}`
+  }
+
   return (
     <div>
       <a href={`${post.path}`}>
@@ -33,13 +46,7 @@ const BlogListItem = ({ post }: Props) => {
               >
                 <Image
                   layout="fill"
-                  src={
-                    !post.thumb
-                      ? `/images/blog/blog-placeholder.png`
-                      : post.type === 'casestudy'
-                      ? post.thumb
-                      : `/images/blog/${post.thumb}`
-                  }
+                  src={getPostImageThumb(post)}
                   objectFit="cover"
                   className="scale-100 transform duration-100 ease-in group-hover:scale-105"
                   alt="case study thumbnail"
